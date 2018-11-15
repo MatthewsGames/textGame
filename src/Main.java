@@ -20,7 +20,7 @@ public class Main {
             for (int i = 0; i < p.length; i++) {
                 for (int i2 = 0; i2 < p[0].length(); i2++) {
                     if (p[i].substring(i2, i2 + 1).equals(" ")) {
-                        places[i][i2] = new Place("Grass", "Soft grass.", i, i2, '#');
+                        places[i][i2] = new Place("Grass", "Soft grass.", i, i2, ' ');
                     }
                     if (p[i].substring(i2, i2 + 1).equals("X")) {
                         places[i][i2] = new Place("Wall", "Stone wall.", i, i2, 'X');
@@ -36,6 +36,9 @@ public class Main {
                         {
                             if (enemies[x].getX() == i2 && enemies[x].getY() == i) {
                                 a = x;
+                            }
+                            if (enemies[x].getX() == bob.getX() && enemies[x].getY() == bob.getY()) {
+                                enemies[x].doThing();
                             }
                         }
                     }

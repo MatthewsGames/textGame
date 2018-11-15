@@ -1,4 +1,5 @@
 import java.util.Random;
+import java.util.Scanner;
 public class Monster extends Entity {
     private Pokeymon[] symbols = new Pokeymon[3];
     public Monster(String n, String d, int a, int b, char c, String s1, String s2, String s3) {
@@ -13,8 +14,15 @@ public class Monster extends Entity {
     }
     public void fight(){
         System.out.println("fight");
+        setX(-1);
+        setY(-1);
     }
     public void doThing() {
-        fight();
+        Scanner scan = new Scanner(System.in);
+        System.out.print(getName() + " would like to fight you.\nDo you want to fight?(Y/N): ");
+        String ans = scan.next();
+        if(ans.toLowerCase().equals("y")) {
+            fight();
+        }
     }
 }
