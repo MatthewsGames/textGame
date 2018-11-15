@@ -8,6 +8,7 @@ public class Player extends Entity{
     private Scanner scan = new Scanner(System.in);
     private int pX;
     private int pY;
+    private ArrayList<Character> pokeymon= new ArrayList<Character>();
     public Player(String n, String d, int a, int b, char c,int l, int da) {
         super(n,d,a,b,c);
         level = l;
@@ -27,6 +28,9 @@ public class Player extends Entity{
         for(Item x: inventory){
             System.out.println(x);
         }
+    }
+    public Character getPokeymon(int i){
+        return pokeymon.get(i);
     }
     public void addItem(Item i){
         inventory.add(i);
@@ -49,5 +53,11 @@ public class Player extends Entity{
             moveY(1);
         }
 
+    }
+    public int getPX(){
+        return pX;
+    }
+    public int getPY(){
+        return pY;
     }
 }

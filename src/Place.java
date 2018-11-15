@@ -20,7 +20,8 @@ public class Place extends NamedThing{
     public char getImage() {
         return image;
     }
-    public void doThing(){
+    public int doThing(Player p, int map){
         System.out.println(getDescription());
+        return -1;
     }
 }

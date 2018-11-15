@@ -22,7 +22,7 @@ public abstract class Entity extends NamedThing{
     public int getY() {
         return y;
     }
-    public void setY(int x){
+    public void setY(int y){
         this.y = y;
     }
     public void moveX(int a){
