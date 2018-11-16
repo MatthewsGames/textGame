@@ -17,17 +17,17 @@ public class Main {
                         "XXXXXXXXXXXXXXXXXX"
                 },
                 {
-                        "      XXXXXXXX",
-                        "      X      X",
-                        "      X      X",
-                        "      X      X",
-                        "      X      X",
-                        "      X      X",
-                        "      X      X",
-                        "      X      X",
-                        "      X      X",
-                        "      X      X",
-                        "      XXXXXXXX"
+                        "       XXXXXXXX",
+                        "       X      X",
+                        "       X      X",
+                        "       X      X",
+                        "       |      X",
+                        "       X      X",
+                        "       X      X",
+                        "       X      X",
+                        "       X      X",
+                        "       X      X",
+                        "       XXXXXXXX"
                 }
         };
         int room = 0;
@@ -49,7 +49,7 @@ public class Main {
                         places[i][i2] = new LongGrass("Long Grass", "Really soft grass.", i, i2, '#');
                     }
                     if (p[i].substring(i2, i2 + 1).equals("|")) {
-                        places[i][i2] = new Door("House Door", "Door to house 1. Type anything to enter.", i, i2, '|');
+                        places[i][i2] = new Door("House Door", "You found a door. Type anything to enter.", i, i2, '|');
                     }
                 }
             }
