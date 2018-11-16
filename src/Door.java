@@ -7,7 +7,10 @@ public class Door extends Place{
             System.out.println(getDescription());
             return 1;
         }
-        //System.out.println(getDescription());
+        if(map == 1){
+            System.out.println(getDescription());
+            return 0;
+        }
         return -1;
     }
 }
