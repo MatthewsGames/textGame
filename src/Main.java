@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        Player bob = new Player("Bob","A guy named Bob",3,3,'@',0,1,10);
+        Player bob = new Player("Bob","A guy named Bob",3,3,'@',0,1,10,10);
         String[] professorsWords = {"Oh, hello there. I seem to have forgotten your name.",
                 "inputName",
                 "Nice to meet you.",
@@ -13,11 +13,11 @@ public class Main {
                 "I think that your mother has some things that she would like to say to you before you leave."
         };
         String[] momsWords = {
-                "Hey Son, Professor Space is looking for you. I think he's inside the house."
+                "Hey Son, Professor Monitor is looking for you. I think he's inside the house."
         };
         //new Monster("Your Mom","The strongest enemy you will ever face",5,5,'&',0,"A","B","C"),
         Entity[] people = {
-                new NPC("Professor Space","A nice man who helps you.",10,5,'P',1,
+                new NPC("Professor Monitor","A nice man who helps you.",10,5,'P',1,
 
    "                        ;;\\\\/;;;;;;;;\n" +
         "                   ;;;;;;;;;;;;;;;;;\n"  +

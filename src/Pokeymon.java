@@ -24,6 +24,10 @@ public class Pokeymon extends Entity {
         return health;
     }
 
+    public void setHealth(int health) {
+        this.health = health;
+    }
+
     public int getLevel() {
         return level;
     }
