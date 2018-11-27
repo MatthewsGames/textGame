@@ -3,10 +3,15 @@ public class NPC extends Entity {
 
     private String[] say;
     private String image;
-    public NPC(String n, String d, int a, int b, char c, int w, String pic, String[] script) {
+    private boolean permanent;
+    public NPC(String n, String d, int a, int b, char c, int w, String pic, String[] script, boolean p) {
         super(n, d, a, b, c, w);
         say = script;
         image = pic;
+        permanent = p;
+    }
+    public boolean isPermanent(){
+        return permanent;
     }
     public void doThing(Player p) {
         Scanner scan = new Scanner(System.in);

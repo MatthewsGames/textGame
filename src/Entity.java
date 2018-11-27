@@ -40,4 +40,7 @@ public abstract class Entity extends NamedThing{
     public void doThing(Player p) {
         super.doThing();
     }
+    public boolean isPermanent(){
+        return true;
+    }
 }

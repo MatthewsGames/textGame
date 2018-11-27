@@ -34,11 +34,23 @@ public class Player extends Entity{
     public int getNumPokeymon(){
         return pokeymon.size();
     }
+    public void setPokeymonHealth(int i, int health) {
+        pokeymon.get(i).setHealth(health);
+    }
+    public void addPokeymonHealth(int i, int health) {
+        pokeymon.get(i).addHealth(health);
+    }
+    public void subtractPokeymonHealth(int i, int health) {
+        pokeymon.get(i).subtractHealth(health);
+    }
     public void addPokeymon(Pokeymon p){
         pokeymon.add(p);
     }
     public Pokeymon getPokeymon(int i){
         return pokeymon.get(i);
+    }
+    public int getPokeymonHealth(int i){
+        return pokeymon.get(i).getHealth();
     }
     public void addItem(Item i){
         inventory.add(i);
@@ -66,9 +78,14 @@ public class Player extends Entity{
     public int getNumPokeyballs() {
         return numPokeyballs;
     }
-
     public void setNumPokeyballs(int numPokeyballs) {
         this.numPokeyballs = numPokeyballs;
+    }
+    public void addPokeyballs(int numPokeyballs) {
+        this.numPokeyballs += numPokeyballs;
+    }
+    public void subtractPokeyballs(int numPokeyballs) {
+        this.numPokeyballs -= numPokeyballs;
     }
 
     public int getPX(){

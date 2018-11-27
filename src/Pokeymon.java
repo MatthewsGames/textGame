@@ -20,12 +20,16 @@ public class Pokeymon extends Entity {
         }
     }
     public int getHealth(){
-        health = level * 20 + xp;
         return health;
     }
-
     public void setHealth(int health) {
         this.health = health;
+    }
+    public void addHealth(int health) {
+        this.health += health;
+    }
+    public void subtractHealth(int health) {
+        this.health -= health;
     }
 
     public int getLevel() {

@@ -14,7 +14,21 @@ public class LongGrass extends Place{
         return -1;
     }
     public void fightPokeymon(Player p, String s){
-        if(p.getNumPokeymon() > 0){
+        int d = -1;
+        int num;
+        if(p.getNumPokeymon() < 3){
+            num = p.getNumPokeymon();
+        }
+        else{
+            num = 3;
+        }
+        for(int i = 0; i < num; i++){
+            if(p.getPokeymon(i).getHealth() >= 0){
+                d = i;
+                break;
+            }
+        }
+        if(p.getNumPokeymon() > 0 && d != -1){
         Scanner scan = new Scanner(System.in);
         po = new Pokeymon(s,s,-1,-1,s.charAt(0),1,(int)(Math.random() * p.getPokeymon(0).getLevel() * 20 + 1));
         System.out.print("You found a " + s + ".\nWould you like to fight it?(Y/N): ");
@@ -22,7 +36,8 @@ public class LongGrass extends Place{
         if(a.toLowerCase().equals("y")) {
             boolean win = false;
             boolean end = false;
-            int c = 0;
+            int c = d;
+
             while (!end) {
                 System.out.println("" +
                         "===================================\n" +
@@ -48,12 +63,12 @@ public class LongGrass extends Place{
                     int r = (int) (Math.random() * 5);
                     if (r == 0) {
                         System.out.println("Critical hit!");
-                        po.setHealth(po.getHealth() - p.getPokeymon(c).getDamage() * 2);
+                        po.subtractHealth(p.getPokeymon(c).getDamage() * 2);
                     } else if (r >= 4) {
                         System.out.println("Your pokeymon's attack missed!");
                     } else {
                         System.out.println("You did " + p.getPokeymon(c).getDamage() + " damage!");
-                        po.setHealth(po.getHealth() - p.getPokeymon(c).getDamage());
+                        po.subtractHealth(p.getPokeymon(c).getDamage());
                     }
                 }
                 if (inp.toLowerCase().equals("run") || inp.toLowerCase().equals("r")) {
@@ -67,39 +82,54 @@ public class LongGrass extends Place{
                     if (p.getNumPokeyballs() > 0) {
                         if (r == 0) {
                             System.out.println("You caught it!");
-                            p.setNumPokeyballs(p.getNumPokeyballs() - 1);
+                            p.subtractPokeyballs(1);
+                            p.addPokeymon(po);
+                            System.out.println("You have " + p.getNumPokeyballs() + " pokeyballs left.");
                             win = true;
+                            end = true;
                         } else {
                             System.out.println("The pokeymon broke out!");
+                            p.subtractPokeyballs(1);
+                            System.out.println("You have " + p.getNumPokeyballs() + " pokeyballs left.");
                         }
                     } else {
                         System.out.println("You don't have any pokeyballs!");
                     }
                 }
-                if (po.getHealth() <= 0) {
-                    win = true;
-                } else if (p.getPokeymon(c).getHealth() < 0) {
-                    System.out.println("Your pokeymon fainted!");
-                    if (c == 2 || c == p.getNumPokeymon()) {
-                        end = true;
-                    } else {
-                        c++;
-                    }
-                }
                 int r = (int) (Math.random() * 5);
                 if (r == 0) {
                     System.out.println("Your opponent had a critical hit!");
-                    p.getPokeymon(c).setHealth(p.getPokeymon(c).getHealth() - po.getDamage() * 2);
+                    p.getPokeymon(c).subtractHealth(po.getDamage() * 2);
                 } else if (r >= 4) {
                     System.out.println("Your opponent's attack missed!");
                 } else {
                     System.out.println("Your opponent did " + po.getDamage() + " damage!");
-                    p.getPokeymon(c).setHealth(p.getPokeymon(c).getHealth() - po.getDamage());
+                    p.getPokeymon(c).subtractHealth(po.getDamage());
+                }
+                if (po.getHealth() <= 0) {
+                    System.out.println("Your opponent fainted!");
+                    end = true;
+                    win = true;
+                } else if (p.getPokeymon(c).getHealth() < 0) {
+                    System.out.println("Your pokeymon fainted!");
+                    if (c >= 2 || c == p.getNumPokeymon() - 1) {
+                        end = true;
+                    } else {
+                        boolean repeat = false;
+                        while(!repeat) {
+                            repeat = false;
+                            if (p.getPokeymon(c + 1).getHealth() >= 0) {
+                                c++;
+                            } else {
+                                repeat = true;
+                            }
+                        }
+                    }
                 }
             }
             }
             else{
-                System.out.println("You don't have any pokeymon.");
+                System.out.println("Your pokeymon are not fit for battle.");
             }
         }
     }

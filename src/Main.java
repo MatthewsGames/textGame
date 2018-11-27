@@ -48,7 +48,7 @@ public class Main {
         "                   /%%\\  /\"'\"'\\  /%%\\\n" +
         "     _____________/%%%%\\/\\'\"'\"/\\/%%%%\\______________\n" +
         "    / :  :  :  /  .\\%%%%%%%\"'/%%%%%%%/.  \\  :  :  : \\\n" +
-        "   )  :  :  :  \\.  .\\%%%%%%/'\"\\%%%%%%/.  ./  :  :  :  (",professorsWords),
+        "   )  :  :  :  \\.  .\\%%%%%%/'\"\\%%%%%%/.  ./  :  :  :  (",professorsWords,false),
         new NPC("Mom","mom",5,5,'M',0,
 "                 ,     ,  ._  ,\n" +
 "                _.MMmm.mMm_Mm.MMm_:mMMmmm.._  .\n" +
@@ -82,21 +82,21 @@ public class Main {
 "        FMMMMMm.`M   M..              .. `Mm   `\"\".MMMmm.\n" +
 "        MMMM'    M      ..           ..    `M      MM`.M!\n" +
 "        Mm'               ..        ..      M      M'   \\\n" +
-"        /                                                \\\n",momsWords)
+"        /                                                \\\n",momsWords,false)
         };
         String[][] rooms = {
                 {
-                        "XXXXXXXXXXXXXXXXXX",
-                        "X                X",
-                        "X                X",
-                        "X       HHH      X",
-                        "X       |HH      X",
-                        "X       HHH      X",
-                        "X                X",
-                        "X               #X",
-                        "X             ###X",
-                        "X          ######X",
-                        "XXXXXXXXXXXXXXXXXX"
+                        "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+                        "X                                                 X",
+                        "X                                                 X",
+                        "X       HHH                                       X",
+                        "X       |HH                                       X",
+                        "X       HHH                                       X",
+                        "X###                                              X",
+                        "X######                                          #X",
+                        "X########                  H-H                 ###X",
+                        "X#########                 HHH              ######X",
+                        "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
                 },
                 {
                         "               ",
@@ -107,6 +107,22 @@ public class Main {
                         "       H      H",
                         "       H      H",
                         "       HHHHHHHH",
+
+                },
+                {
+                        "                                                   ",
+                        "                                                   ",
+                        "                                                   ",
+                        "                                                   ",
+                        "                                                   ",
+                        "                                                   ",
+                        "                                                   ",
+                        "                      HHHHHH-HHHHHH                ",
+                        "                      H           H                ",
+                        "                      H           H                ",
+                        "                      H           H                ",
+                        "                      HHHHHHHHHHHHH                ",
+                        "                                                   ",
 
                 }
         };
@@ -130,6 +146,9 @@ public class Main {
                     if (p[i].substring(i2, i2 + 1).equals("|")) {
                         places[i][i2] = new Door("Door", "You found a door. Type anything to enter.", i, i2, '|');
                     }
+                    if (p[i].substring(i2, i2 + 1).equals("-")) {
+                        places[i][i2] = new Door("Door", "You found a door. Type anything to enter.", i, i2, '-');
+                    }
                 }
             }
             boolean breaker = false;
@@ -145,6 +164,9 @@ public class Main {
                             }
                             if (people[x].getX() == bob.getX() && people[x].getY() == bob.getY() && people[x].getRoom() == bob.getRoom()) {
                                 people[x].doThing(bob);
+                                if(!people[x].isPermanent()) {
+                                    people[x].setX(-500);
+                                }
                             }
                         }
                     }
