@@ -23,6 +23,9 @@ public class NPC extends Entity {
             else if(x.equals("givePokeymon")){
                 givePokeymon(p);
             }
+            else if(x.equals("healPokeymon")){
+                healPokeymon(p);
+            }
             else {
                 System.out.println(getName() + ": " + x + "\nPress enter to continue...");
                 scan.nextLine();
@@ -38,6 +41,13 @@ public class NPC extends Entity {
         Scanner scan = new Scanner(System.in);
         System.out.print("What is your name?: ");
         p.setName(scan.next());
+    }
+    public void healPokeymon(Player p){
+        Scanner scan = new Scanner(System.in);
+        for(int i = 0; i < p.getNumPokeymon(); i++){
+            p.getPokeymon(i).checkUpgrade();
+            p.getPokeymon(i).setHealth(p.getPokeymon(i).getMaxHealth());
+        }
     }
     public void givePokeymon(Player p){
         System.out.println("Here are your choices for your first pokeymon. You can choose A, B, or C.");

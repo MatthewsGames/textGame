@@ -15,6 +15,12 @@ public class Main {
         String[] momsWords = {
                 "Hey Son, Professor Monitor is looking for you. I think he's inside the house."
         };
+        String[] healersWords = {
+                "I heard that your pokeymon are running out of health.",
+                "healPokeymon",
+                "There you go, I just healed them for you. They should be better now.",
+                "Come back in to see me whenever your pokeymon faint."
+        };
         //new Monster("Your Mom","The strongest enemy you will ever face",5,5,'&',0,"A","B","C"),
         Entity[] people = {
                 new NPC("Professor Monitor","A nice man who helps you.",10,5,'P',1,
@@ -82,7 +88,46 @@ public class Main {
 "        FMMMMMm.`M   M..              .. `Mm   `\"\".MMMmm.\n" +
 "        MMMM'    M      ..           ..    `M      MM`.M!\n" +
 "        Mm'               ..        ..      M      M'   \\\n" +
-"        /                                                \\\n",momsWords,false)
+"        /                                                \\\n",momsWords,false),
+                new NPC("Healer","She heals your pokeymon.",28,10,'%',2,
+                        "                                   ____________\n" +
+                        "                               _____/            \\_\n" +
+                        "                    __________/  _/          _____ \\__\n" +
+                        "        ______ ____/            /           /     \\___\\_\n" +
+                        "      _/      \\____           _/          _/             \\_\n" +
+                        "    _/             \\____     /          _/    ___          \\\n" +
+                        "   /    _______         \\_   |         /  ___/_____-        |\n" +
+                        "  /   _/       \\__        \\_ |       _/__/      \\_ \\__      |\n" +
+                        " /  _/            \\______     \\     /_/           \\   \\     |\n" +
+                        " |_/                _____\\__________/              \\        |\n" +
+                        " /               __/  __/ _/                          \\_   /\n" +
+                        " |           ___/    /  _/                              \\_ |\n" +
+                        " |        __/  /    |  /                  ________   \\    \\|\n" +
+                        " |                  | /                   \\XXXXXXXXxx_|    |\n" +
+                        " |\\                 | |                               |     \\___\n" +
+                        " | |          |     \\ |______                         |         \\_\n" +
+                        " |  \\             ___||XXXXX/                ---_     |           \\\n" +
+                        " |  |         | xxXXX//                     /___-///  |           |\n" +
+                        "  \\ \\        /\\     |/                 /   |///OX\\\\\\  |           |\n" +
+                        "  |  ||    _/  |        __---_         |   | \\\\XX///   \\___      \\|\n" +
+                        "  \\ //   _/    |     \\\\\\xxxxx \\        |   |\\_\\---       \\ \\_      \\\n" +
+                        "   |/  _/      |      | //OXX\\\\\\        \\                 \\  \\_     \\\n" +
+                        "  _/ _/        /\\     | \\\\XXX///\\                         |\\   \\    |\n" +
+                        " /__/         /  \\     \\_-----                            | \\   |   /\n" +
+                        "|/ /              |                       \\               /  |   \\_/\n" +
+                        "   |             /|                      _|              |  | __/\n" +
+                        "  /             | |                  \\ -                 / _/_/\n" +
+                        "  |           _/ _/                         _____       |/\n" +
+                        "  | _       _/  /\\\\ \\               ________/ / |       /_\n" +
+                        "  |/       /   /  \\_ \\_          __/_________/ /       /  \\______\n" +
+                        "   \\      |   | \\_  \\- \\_          \\__________/      _/          \\\n" +
+                        "    \\__   |              \\___                      _/\\_           |\n" +
+                        "       \\__|\\_                \\___                _/|   \\         /\n" +
+                        "          \\__\\_______________/   \\___         __/  |\\          \\/\n" +
+                        "                       \\___  |       \\_______/     | \\___       |\n" +
+                        "                        /  \\_|                     |   \\ \\_____/\n" +
+                        "                _______|____/                       \\___\\__\n" ,healersWords,true)
+
         };
         String[][] rooms = {
                 {

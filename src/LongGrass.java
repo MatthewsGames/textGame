@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class LongGrass extends Place{
-    private String Symbols[] = {"A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","!","?","$","%"};
+    private String Symbols[] = {"A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","!","?","$"};
     private Pokeymon po;
     public LongGrass(String n, String d, int a, int b, char c){
         super(n,d,a,b,c);
@@ -118,18 +118,20 @@ public class LongGrass extends Place{
                         boolean repeat = false;
                         while(!repeat) {
                             repeat = false;
-                            if (p.getPokeymon(c + 1).getHealth() >= 0) {
-                                c++;
-                            } else {
+                            if(c != p.getNumPokeymon() - 1) {
+                                if (p.getPokeymon(c + 1).getHealth() >= 0) {
+                                    c++;
+                                } else {
+                                    repeat = true;
+                                }
+                            }
+                            else{
                                 repeat = true;
                             }
                         }
                     }
                 }
             }
-            }
-            else{
-                System.out.println("Your pokeymon are not fit for battle.");
             }
         }
     }
