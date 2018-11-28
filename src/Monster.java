@@ -11,15 +11,12 @@ public class Monster extends Entity {
     public Pokeymon getSymbol(int i) {
         return symbols[i];
     }
-    public void fight(Player p){
-        System.out.println("fight");
-    }
     public void doThing(Player p) {
         Scanner scan = new Scanner(System.in);
         System.out.print(getName() + " would like to fight you.\nDo you want to fight?(Y/N): ");
         String ans = scan.next();
         if(ans.toLowerCase().equals("y")) {
-            fight(p);
+            fightPokeymon(p);
         }
         p.setX(p.getPX());
         p.setY(p.getPY());
@@ -27,7 +24,7 @@ public class Monster extends Entity {
             System.out.println();
         }
     }
-    public void fightPokeymon(Player p, String s){
+    public void fightPokeymon(Player p){
         int d = -1;
         int num;
         if(p.getNumPokeymon() < 3){
@@ -44,10 +41,6 @@ public class Monster extends Entity {
         }
         if(p.getNumPokeymon() > 0 && d != -1){
             Scanner scan = new Scanner(System.in);
-            Pokeymon[] po = {new Pokeymon(s,s,-1,-1,s.charAt(0),1,(int)(Math.random() * p.getPokeymon(0).getLevel() * 20 + 1)),new Pokeymon(s,s,-1,-1,s.charAt(0),1,(int)(Math.random() * p.getPokeymon(0).getLevel() * 20 + 1)),new Pokeymon(s,s,-1,-1,s.charAt(0),1,(int)(Math.random() * p.getPokeymon(0).getLevel() * 20 + 1))};
-            System.out.print("You found a " + s + ".\nWould you like to fight it?(Y/N): ");
-            String a = scan.next();
-            if(a.toLowerCase().equals("y")) {
                 boolean win = false;
                 boolean end = false;
                 int c = d;
@@ -56,7 +49,7 @@ public class Monster extends Entity {
                     System.out.println("" +
                             "===================================\n" +
                             "|                   \t" + po[0].getHealth() + " /***\\   |\n" +
-                            "|                        |  " + s + "  |  |\n" +
+                            "|                        |  " + symbols + "  |  |\n" +
                             "|                         \\___/   |\n" +
                             "|                                 |\n" +
                             "|                                 |\n" +
@@ -149,4 +142,3 @@ public class Monster extends Entity {
             }
         }
     }
-}
