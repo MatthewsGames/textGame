@@ -59,6 +59,9 @@ public class LongGrass extends Place{
                         "===================================");
                 System.out.print("What would you like to do?(attack, run, catch): ");
                 String inp = scan.next();
+                for(int i = 0; i < 20; i++){
+                    System.out.println();
+                }
                 if (inp.toLowerCase().equals("attack") || inp.toLowerCase().equals("a")) {
                     int r = (int) (Math.random() * 5);
                     if (r == 0) {

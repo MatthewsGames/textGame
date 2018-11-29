@@ -1,12 +1,23 @@
 import java.util.Scanner;
 public class Monster extends Entity {
     private Pokeymon[] symbols = new Pokeymon[3];
-    public Monster(String n, String d, int a, int b, char c, int w, String s1, String s2, String s3) {
+    private String image;
+    private String[] say;
+    private int[] damages;
+    private boolean alive;
+    public Monster(String n, String d, int a, int b, char c, int w, String s1, String s2, String s3, String image, String[] say, int[] damages) {
         super(n, d, a, b, c, w);
         String[] s = {s1,s2,s3};
+        this.say = say;
+        this.image = image;
+        this.damages = damages;
         for(int i = 0; i < s.length; i++){
-            symbols[i] = new Pokeymon(s[i],s[i].toLowerCase(),a,b,s[i].charAt(0),1,(int)(Math.random()*20) + 1);
+            symbols[i] = new Pokeymon(s[i],s[i].toLowerCase(),a,b,s[i].charAt(0),1,damages[i]);
         }
+        alive = true;
+    }
+    public boolean isAlive(){
+        return alive;
     }
     public Pokeymon getSymbol(int i) {
         return symbols[i];
@@ -24,9 +35,53 @@ public class Monster extends Entity {
             System.out.println();
         }
     }
+    public void sayThing(Player p) {
+        Scanner scan = new Scanner(System.in);
+        for(String x: say) {
+            System.out.println(image);
+            if(x.equals("givePokeymon")){
+                givePokeymon(p);
+            }
+            else if(x.equals("healPokeymon")){
+                healPokeymon(p);
+            }
+            else {
+                System.out.println(getName() + ": " + x + "\nPress enter to continue...");
+                scan.nextLine();
+            }
+            for(int i = 0; i < 50; i++) {
+                System.out.println();
+            }
+        }
+        p.setX(p.getPX());
+        p.setY(p.getPY());
+    }
+    public void healPokeymon(Player p){
+        Scanner scan = new Scanner(System.in);
+        for(int i = 0; i < p.getNumPokeymon(); i++){
+            p.getPokeymon(i).checkUpgrade();
+            p.getPokeymon(i).setHealth(p.getPokeymon(i).getMaxHealth());
+        }
+    }
+    public void givePokeymon(Player p){
+        System.out.println("Here are your choices for your first pokeymon. You can choose A, B, or C.");
+        System.out.print("Which one would you like?: ");
+        Scanner scan = new Scanner(System.in);
+        boolean a = false;
+        while(a == false) {
+            String b = scan.next();
+            if (b.equals("A") || b.equals("B") || b.equals("C")) {
+                p.addPokeymon(new Pokeymon(b, b, p.getX(), p.getY(), b.charAt(0), 1, 10));
+                a = true;
+            }
+        }
+    }
     public void fightPokeymon(Player p){
         int d = -1;
         int num;
+        for(Pokeymon x: symbols){
+            x.setHealth(x.getMaxHealth());
+        }
         if(p.getNumPokeymon() < 3){
             num = p.getNumPokeymon();
         }
@@ -44,12 +99,12 @@ public class Monster extends Entity {
                 boolean win = false;
                 boolean end = false;
                 int c = d;
-
+                int e = 0;
                 while (!end) {
                     System.out.println("" +
                             "===================================\n" +
-                            "|                   \t" + po[0].getHealth() + " /***\\   |\n" +
-                            "|                        |  " + symbols + "  |  |\n" +
+                            "|                  \t" + symbols[e].getHealth() + "    /***\\   |\n" +
+                            "|                        |  " + symbols[e].getImage() + "  |  |\n" +
                             "|                         \\___/   |\n" +
                             "|                                 |\n" +
                             "|                                 |\n" +
@@ -66,16 +121,19 @@ public class Monster extends Entity {
                             "===================================");
                     System.out.print("What would you like to do?(attack, run, catch): ");
                     String inp = scan.next();
+                    for(int i = 0; i < 20; i++){
+                        System.out.println();
+                    }
                     if (inp.toLowerCase().equals("attack") || inp.toLowerCase().equals("a")) {
                         int r = (int) (Math.random() * 5);
                         if (r == 0) {
                             System.out.println("Critical hit!");
-                            po[0].subtractHealth(p.getPokeymon(c).getDamage() * 2);
+                            symbols[e].subtractHealth(p.getPokeymon(c).getDamage() * 2);
                         } else if (r >= 4) {
                             System.out.println("Your pokeymon's attack missed!");
                         } else {
                             System.out.println("You did " + p.getPokeymon(c).getDamage() + " damage!");
-                            po[0].subtractHealth(p.getPokeymon(c).getDamage());
+                            symbols[e].subtractHealth(p.getPokeymon(c).getDamage());
                         }
                     }
                     if (inp.toLowerCase().equals("run") || inp.toLowerCase().equals("r")) {
@@ -85,38 +143,30 @@ public class Monster extends Entity {
                         }
                     }
                     if (inp.toLowerCase().equals("catch") || inp.toLowerCase().equals("c")) {
-                        int r = (int) (Math.random() * po[0].getHealth() / 10);
-                        if (p.getNumPokeyballs() > 0) {
-                            if (r == 0) {
-                                System.out.println("You caught it!");
-                                p.subtractPokeyballs(1);
-                                p.addPokeymon(po[0]);
-                                System.out.println("You have " + p.getNumPokeyballs() + " pokeyballs left.");
-                                win = true;
-                                end = true;
-                            } else {
-                                System.out.println("The pokeymon broke out!");
-                                p.subtractPokeyballs(1);
-                                System.out.println("You have " + p.getNumPokeyballs() + " pokeyballs left.");
-                            }
-                        } else {
-                            System.out.println("You don't have any pokeyballs!");
-                        }
+                        System.out.println("You can't catch someone else's pokeymon.");
+                        p.subtractPokeyballs(1);
                     }
                     int r = (int) (Math.random() * 5);
                     if (r == 0) {
                         System.out.println("Your opponent had a critical hit!");
-                        p.getPokeymon(c).subtractHealth(po[0].getDamage() * 2);
+                        p.getPokeymon(c).subtractHealth(symbols[e].getDamage() * 2);
                     } else if (r >= 4) {
                         System.out.println("Your opponent's attack missed!");
                     } else {
-                        System.out.println("Your opponent did " + po[0].getDamage() + " damage!");
-                        p.getPokeymon(c).subtractHealth(po[0].getDamage());
+                        System.out.println("Your opponent did " + symbols[e].getDamage() + " damage!");
+                        p.getPokeymon(c).subtractHealth(symbols[e].getDamage());
                     }
-                    if (po[0].getHealth() <= 0) {
+                    if (symbols[e].getHealth() <= 0) {
                         System.out.println("Your opponent fainted!");
-                        end = true;
-                        win = true;
+                        if(e == 2) {
+                            end = true;
+                            win = true;
+                            sayThing(p);
+                            alive = false;
+                        }
+                        else{
+                            e++;
+                        }
                     } else if (p.getPokeymon(c).getHealth() < 0) {
                         System.out.println("Your pokeymon fainted!");
                         if (c >= 2 || c == p.getNumPokeymon() - 1) {
@@ -139,6 +189,11 @@ public class Monster extends Entity {
                         }
                     }
                 }
+            if(win == true){
+                for(int i = d; i < num; i++){
+                    p.getPokeymon(i).addXP(1);
+                }
+            }
             }
         }
     }

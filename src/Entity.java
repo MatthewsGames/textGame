@@ -43,4 +43,7 @@ public abstract class Entity extends NamedThing{
     public boolean isPermanent(){
         return true;
     }
+    public boolean isAlive(){
+        return true;
+    }
 }

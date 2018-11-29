@@ -15,6 +15,10 @@ public class Main {
         String[] momsWords = {
                 "Hey Son, Professor Monitor is looking for you. I think he's inside the house."
         };
+        String[] momsWords2 = {
+                "Wow, Good battle son. You're a natural!"
+        };
+        int[] momsPokeymon = {1,2,3};
         String[] healersWords = {
                 "I heard that your pokeymon are running out of health.",
                 "healPokeymon",
@@ -22,6 +26,9 @@ public class Main {
                 "Come back in to see me whenever your pokeymon faint."
         };
         //new Monster("Your Mom","The strongest enemy you will ever face",5,5,'&',0,"A","B","C"),
+        Sign[] signs = {
+
+        };
         Entity[] people = {
                 new NPC("Professor Monitor","A nice man who helps you.",10,5,'P',1,
 
@@ -126,7 +133,41 @@ public class Main {
                         "          \\__\\_______________/   \\___         __/  |\\          \\/\n" +
                         "                       \\___  |       \\_______/     | \\___       |\n" +
                         "                        /  \\_|                     |   \\ \\_____/\n" +
-                        "                _______|____/                       \\___\\__\n" ,healersWords,true)
+                        "                _______|____/                       \\___\\__\n" ,healersWords,true),
+                new Monster("Your Mom","Your Mom", 10, 3, 'M',1,"A","B","C",
+                        "                 ,     ,  ._  ,\n" +
+                                "                _.MMmm.mMm_Mm.MMm_:mMMmmm.._  .\n" +
+                                "           _ .-mmMMMMMMMMMMMMm:MMm:MMMMMMMMMm._\n" +
+                                "            `-.mm.MMMMMMM:MMMMMMMmmMMMMMMMMMmm._\n" +
+                                "         _.mMMMMMmMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\"~.\n" +
+                                "          .MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMm._\n" +
+                                "         _.MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMm._\n" +
+                                "      ..mMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmmm.\n" +
+                                "     _.mmMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMm.\n" +
+                                "      _.MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMm_\n" +
+                                "  .mmMMMMMMMMMMMMMMMMMMMMMMMM' `MMMMMMMMMMMMMMMMMMMMMMm,\n" +
+                                " _.-' _.mMMMMMMMMMMMMMMMMMMM'      `MMMMMMMMMMMMMMMM\"\"`\n" +
+                                "  _,MMMmMMMMMMMMMMMMMMMM'            `MMMMMMMMMMMMMMmm.\n" +
+                                "    _.-'MMMMMMMMMMMMMMM.'\"\"`.    ,'\"\"`.MMMMMMMMMMMMMMMM.\n" +
+                                "   .mmMMMMMMMMMMMMMMMM' <(o)>`  '<(o)>` MMMMMMMMMMMMMMMm.\n" +
+                                "      .MMMMMMMMMMMMMMM                 'MMMMMMMMMMMMMMM:\n" +
+                                "   ,MMMmMMMMMMMMMMMMM'                 `MMMMMMMMMMMMmm.\n" +
+                                "  ,ME:MMMMMMMMMMMMMM_6       -  -       7_MMMMMMMMM:Mm_\n" +
+                                "  !M:MmmMMMMMMMMMMMMML_                _JMMMMMMMMMm:MMm.\n" +
+                                "  '':mMMMMMMMMMMMMMMMM\\     ______     /dMMMMMMMMMMM:'Mm.\n" +
+                                "   ':MMM:MMMMMMMMMMMMMM\\    `.__.'    /MMMMMM:MMMMMMm: `\n" +
+                                "  .M:MMM:MMMMMMMMMMMMMMM`.          ,'MMMMMMM:MMMMMMMm\n" +
+                                "    .Mm:mMMMMMMMMMMMMMMM| `.      .' |MMMMMMm:.MMMMM.\n" +
+                                "   .Mm:mMMMMMMMMMMMMMMMM|   `----':: |MMMMMMMmm`MMMMMm.\n" +
+                                "     !:mMMMMMMMMMMMMMMMM|      ::::. |MMMMMMMMMMM``mMm.\n" +
+                                "       !MMMMMMMMM'MMMMMM|      .:::. |MMMMMMMMMMMMM.._\n" +
+                                "       MMMMMMMMM'MMMM'M/       ::::'  \\MMMMMMMMMMMMMMm,\n" +
+                                "      .mMMMMMMM'MMMM'MMm.       '     .`\".MMMMMMMMMMMMm.\n" +
+                                "       !!JmMMM'MMM' `M:.      ,  ,     .. M.\".MMMMMMMMm.\n" +
+                                "        FMMMMMm.`M   M..              .. `Mm   `\"\".MMMmm.\n" +
+                                "        MMMM'    M      ..           ..    `M      MM`.M!\n" +
+                                "        Mm'               ..        ..      M      M'   \\\n" +
+                                "        /                                                \\\n", momsWords2, momsPokeymon)
 
         };
         String[][] rooms = {
@@ -231,6 +272,11 @@ public class Main {
                     else {
                         map += places[i][i2].getImage();
                     }
+                }
+            }
+            for(Entity x: people){
+                if(!x.isAlive()){
+                    x.setX(-1);
                 }
             }
             if(!breaker) {
