@@ -27,7 +27,7 @@ public class Main {
         };
         //new Monster("Your Mom","The strongest enemy you will ever face",5,5,'&',0,"A","B","C"),
         Sign[] signs = {
-
+            new Sign("Your House Sign","A sign", 7,5, '?',"This is your house.")
         };
         Entity[] people = {
                 new NPC("Professor Monitor","A nice man who helps you.",10,5,'P',1,
@@ -256,6 +256,18 @@ public class Main {
                             }
                         }
                     }
+                    int b = -1;
+                    int c = -1;
+                    for(int x = 0; x < signs.length; x++){
+                        {
+                            if (signs[x].getX() == i2 && signs[x].getY() == i) {
+                                b = x;
+                            }
+                            if (signs[x].getX() == bob.getX() && signs[x].getY() == bob.getY()) {
+                                c = x;
+                            }
+                        }
+                    }
                     if(a >= 0){
                         map += people[a].getImage();
                     }
@@ -268,6 +280,12 @@ public class Main {
                         if(i != bob.getY() || i2 != bob.getX()){
                             breaker = true;
                         }
+                        if(b > -1) {
+                            signs[b].doThing(bob, 0);
+                        }
+                    }
+                    else if(b >= 0){
+                        map += signs[b].getImage();
                     }
                     else {
                         map += places[i][i2].getImage();

@@ -46,5 +46,8 @@ public class Pokeymon extends Entity {
         xp += num;
         checkUpgrade();
     }
+    public String toString(){
+        return getName() + ": " + getDescription() + ". Health: " + health + ", Damage: " + damage;
+    }
 }
 

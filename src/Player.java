@@ -72,9 +72,42 @@ public class Player extends Entity{
         if(input.equals("down") || input.toLowerCase().equals("s")){
             moveY(1);
         }
+        if(input.equals("pokeymon") || input.toLowerCase().equals("p")){
+            moveY(1);
+        }
 
     }
-
+    public void changePokeymonOrder(){
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Current Battle Pokeymon:");
+        for(int i = 0; i < 3; i++){
+            System.out.println(pokeymon.get(i));
+        }
+        System.out.println("All Pokeymon:");
+        int a = 1;
+        for(Pokeymon p : pokeymon){
+            System.out.println(a + ". " + p);
+            a++;
+        }
+        int[] p = new int[3];
+        for(int i = 0; i < 3; i++) {
+            int b = 0;
+            while(b > 0 && b < getNumPokeymon()) {
+                System.out.print("What pokeymon would you like as battle pokeymon #" + (i + 1) + "?(1,2,3,etc.): ");
+                b = scan.nextInt() - 1;
+            }
+            p[i] = b;
+        }
+        for(int i = 0; i < 3; i++) {
+            Pokeymon c = pokeymon.get(p[i]);
+            pokeymon.remove(p[i]);
+            pokeymon.add(i, c);
+        }
+        System.out.println("These are your new Battle Pokeymon:");
+        for(int i = 0; i < 3; i++){
+            System.out.println(pokeymon.get(i));
+        }
+    }
     public int getNumPokeyballs() {
         return numPokeyballs;
     }
