@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        Player bob = new Player("Bob","A guy named Bob",3,3,'@',0,1,10,10);
+        Player bob = new Player("Bob","A guy named Bob",3,12,'@',0,1,10,10);
         String[] professorsWords = {"Oh, hello there. I seem to have forgotten your name.",
                 "inputName",
                 "Nice to meet you.",
@@ -27,10 +27,11 @@ public class Main {
         };
         //new Monster("Your Mom","The strongest enemy you will ever face",5,5,'&',0,"A","B","C"),
         Sign[] signs = {
-            new Sign("Your House Sign","A sign", 7,5, '?',"This is your house.")
+            new Sign("Your House Sign","A sign", 7,14, '?',"This is your house."),
+                new Sign("Healer Sign","A sign", 18,16, '?',"This where you can heal your pokeymon.")
         };
         Entity[] people = {
-                new NPC("Professor Monitor","A nice man who helps you.",10,5,'P',1,
+                new NPC("Professor Monitor","A nice man who helps you.",10,14,'P',1,
 
    "                        ;;\\\\/;;;;;;;;\n" +
         "                   ;;;;;;;;;;;;;;;;;\n"  +
@@ -62,7 +63,7 @@ public class Main {
         "     _____________/%%%%\\/\\'\"'\"/\\/%%%%\\______________\n" +
         "    / :  :  :  /  .\\%%%%%%%\"'/%%%%%%%/.  \\  :  :  : \\\n" +
         "   )  :  :  :  \\.  .\\%%%%%%/'\"\\%%%%%%/.  ./  :  :  :  (",professorsWords,false),
-        new NPC("Mom","mom",5,5,'M',0,
+        new NPC("Mom","mom",5,14,'M',0,
 "                 ,     ,  ._  ,\n" +
 "                _.MMmm.mMm_Mm.MMm_:mMMmmm.._  .\n" +
 "           _ .-mmMMMMMMMMMMMMm:MMm:MMMMMMMMMm._\n" +
@@ -96,7 +97,7 @@ public class Main {
 "        MMMM'    M      ..           ..    `M      MM`.M!\n" +
 "        Mm'               ..        ..      M      M'   \\\n" +
 "        /                                                \\\n",momsWords,false),
-                new NPC("Healer","She heals your pokeymon.",28,10,'%',2,
+                new NPC("Healer","She heals your pokeymon.",19,19,'%',2,
                         "                                   ____________\n" +
                         "                               _____/            \\_\n" +
                         "                    __________/  _/          _____ \\__\n" +
@@ -134,7 +135,7 @@ public class Main {
                         "                       \\___  |       \\_______/     | \\___       |\n" +
                         "                        /  \\_|                     |   \\ \\_____/\n" +
                         "                _______|____/                       \\___\\__\n" ,healersWords,true),
-                new Monster("Your Mom","Your Mom", 10, 3, 'M',1,"A","B","C",
+                new Monster("Your Mom","Your Mom", 10, 12, 'M',1,"A","B","C",
                         "                 ,     ,  ._  ,\n" +
                                 "                _.MMmm.mMm_Mm.MMm_:mMMmmm.._  .\n" +
                                 "           _ .-mmMMMMMMMMMMMMm:MMm:MMMMMMMMMm._\n" +
@@ -172,19 +173,37 @@ public class Main {
         };
         String[][] rooms = {
                 {
-                        "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
-                        "X                                                 X",
-                        "X                                                 X",
-                        "X       HHH                                       X",
-                        "X       |HH                                       X",
-                        "X       HHH                                       X",
-                        "X###                                              X",
-                        "X######                                          #X",
-                        "X########                  H-H                 ###X",
-                        "X#########                 HHH              ######X",
-                        "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+                        "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+                        "X                                X    HHHHHHHHHHHX",
+                        "X                                X    H-HHHHHHHHHX",
+                        "X                                X       |HHHHHHHX",
+                        "X                                X        HHH-HHHX",
+                        "X                                                X",
+                        "X                                XXXXXXXXXXXXXXXXX",
+                        "X                                                X",
+                        "X                                                X",
+                        "X                                 ######         X",
+                        "X                                ########        X",
+                        "X                                ########        X",
+                        "X       HHH                       ######         X",
+                        "X       |HH                                      X",
+                        "X       HHH                                      X",
+                        "X                                                X",
+                        "XHHH-HH                                          X",
+                        "XHHHHHH           H-H                            X",
+                        "XHHHHHH           HHH                            X",
+                        "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
                 },
                 {
+                        "               ",
+                        "               ",
+                        "               ",
+                        "               ",
+                        "               ",
+                        "               ",
+                        "               ",
+                        "               ",
+                        "               ",
                         "               ",
                         "       HHHHHHHH",
                         "       H      H",
@@ -203,11 +222,20 @@ public class Main {
                         "                                                   ",
                         "                                                   ",
                         "                                                   ",
-                        "                      HHHHHH-HHHHHH                ",
-                        "                      H           H                ",
-                        "                      H           H                ",
-                        "                      H           H                ",
-                        "                      HHHHHHHHHHHHH                ",
+                        "                                                   ",
+                        "                                                   ",
+                        "                                                   ",
+                        "                                                   ",
+                        "                                                   ",
+                        "                                                   ",
+                        "                                                   ",
+                        "                                                   ",
+                        "                                                   ",
+                        "             HHHHHH-HHHHHH                         ",
+                        "             H           H                         ",
+                        "             H           H                         ",
+                        "             H           H                         ",
+                        "             HHHHHHHHHHHHH                         ",
                         "                                                   ",
 
                 }
@@ -258,13 +286,15 @@ public class Main {
                     }
                     int b = -1;
                     int c = -1;
-                    for(int x = 0; x < signs.length; x++){
-                        {
-                            if (signs[x].getX() == i2 && signs[x].getY() == i) {
-                                b = x;
-                            }
-                            if (signs[x].getX() == bob.getX() && signs[x].getY() == bob.getY()) {
-                                c = x;
+                    if(bob.getRoom() == 0) {
+                        for (int x = 0; x < signs.length; x++) {
+                            {
+                                if (signs[x].getX() == i2 && signs[x].getY() == i) {
+                                    b = x;
+                                }
+                                if (signs[x].getX() == bob.getX() && signs[x].getY() == bob.getY()) {
+                                    c = x;
+                                }
                             }
                         }
                     }

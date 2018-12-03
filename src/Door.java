@@ -3,11 +3,11 @@ public class Door extends Place{
         super(n,d,a,b,c);
     }
     public int doThing(Player p,int map){
-        if(map == 0 && p.getX() == 8 && p.getY() == 4){
+        if(map == 0 && p.getX() == 8 && p.getY() == 13){
             System.out.println(getDescription());
             return 1;
         }
-        if(map == 0 && p.getX() == 28 && p.getY() == 8){
+        if(map == 0 && p.getX() == 19 && p.getY() == 17){
             System.out.println(getDescription());
             return 2;
         }

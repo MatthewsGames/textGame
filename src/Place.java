@@ -21,7 +21,7 @@ public class Place extends NamedThing{
         return image;
     }
     public int doThing(Player p, int map){
-        System.out.println(getDescription());
+        //System.out.println(getDescription());
         return -1;
     }
 }
