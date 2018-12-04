@@ -8,7 +8,7 @@ public class LongGrass extends Place{
     }
     public int doThing(Player p, int map){
         int r = (int)(Math.random()*100);
-        if(r < 30){
+        if(r < 29){
             fightPokeymon(p,Symbols[r]);
         }
         return -1;
@@ -133,6 +133,11 @@ public class LongGrass extends Place{
                             }
                         }
                     }
+                }
+            }
+            if(win == true){
+                for(int i = d; i < num; i++){
+                    p.getPokeymon(i).addXP(1);
                 }
             }
             }

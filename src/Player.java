@@ -72,8 +72,16 @@ public class Player extends Entity{
         if(input.equals("down") || input.toLowerCase().equals("s")){
             moveY(1);
         }
-        if(input.equals("pokeymon") || input.toLowerCase().equals("p")){
+        if(input.equals("help") || input.toLowerCase().equals("h")){
             moveY(1);
+        }
+        if(input.equals("pokeymon") || input.toLowerCase().equals("p")){
+            if(getNumPokeymon() >= 3) {
+                changePokeymonOrder();
+            }
+            else{
+                System.out.println("You need at least 3 pokeymon to change their battle order.");
+            }
         }
 
     }
@@ -91,8 +99,9 @@ public class Player extends Entity{
         }
         int[] p = new int[3];
         for(int i = 0; i < 3; i++) {
-            int b = 0;
-            while(b > 0 && b < getNumPokeymon()) {
+            int b = -1;
+            System.out.println(getNumPokeymon());
+            while(!(b >= 0 && b < getNumPokeymon())) {
                 System.out.print("What pokeymon would you like as battle pokeymon #" + (i + 1) + "?(1,2,3,etc.): ");
                 b = scan.nextInt() - 1;
             }
