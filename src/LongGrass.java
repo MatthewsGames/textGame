@@ -30,7 +30,7 @@ public class LongGrass extends Place{
         }
         if(p.getNumPokeymon() > 0 && d != -1){
         Scanner scan = new Scanner(System.in);
-        po = new Pokeymon(s,s,-1,-1,s.charAt(0),1,(int)(Math.random() * p.getPokeymon(0).getLevel() * 20 + 1));
+        po = new Pokeymon(s,s,-1,-1,s.charAt(0),p.getPokeymon(0).getLevel(),(int)(Math.random() * (p.getPokeymon(0).getLevel()) * 5 + 20));
         System.out.print("You found a " + s + ".\nWould you like to fight it?(Y/N): ");
         String a = scan.next();
         if(a.toLowerCase().equals("y")) {

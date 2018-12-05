@@ -7,15 +7,23 @@ public class Door extends Place{
             System.out.println(getDescription());
             return 1;
         }
+        if(map == 0 && p.getX() == 3 && p.getY() == 2){
+            System.out.println(getDescription());
+            return 3;
+        }
+        if(map == 0 && p.getX() == 3 && p.getY() == 17){
+            System.out.println(getDescription());
+            return 4;
+        }
+        if(map == 0 && p.getX() == 19 && p.getY() == 17){
+            System.out.println(getDescription());
+            return 5;
+        }
         if(map == 0 && p.getX() == 9 && p.getY() == 17){
             System.out.println(getDescription());
             return 2;
         }
-        if(map == 1){
-            System.out.println(getDescription());
-            return 0;
-        }
-        if(map == 2){
+        if(map > 0){
             System.out.println(getDescription());
             return 0;
         }
