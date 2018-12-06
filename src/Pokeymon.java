@@ -9,8 +9,8 @@ public class Pokeymon extends Entity {
         damage = da;
         level = l;
         xp = 0;
-        health = (level - 1) * 20 + xp;
-        maxHealth = (level - 1) * 20 + xp;
+        health = (level - 1) * 5 + 20 + xp;
+        maxHealth = (level - 1) * 5 + 20 + xp;
     }
     public int getDamage() {
         return damage*level;
@@ -20,8 +20,8 @@ public class Pokeymon extends Entity {
             xp -= level + 1;
             level++;
             health = maxHealth;
-            damage *= 1.5;
-            System.out.println("Your pokeymon upgraded!");
+            damage *= 1.1;
+            System.out.println("Your pokeymon leveled up!");
         }
         maxHealth = 20 + (level - 1) * 5 + xp;
     }

@@ -5,6 +5,8 @@ public class Monster extends Entity {
     private String[] say;
     private int[] damages;
     private boolean alive;
+    private boolean lost = false;
+    private boolean battled = false;
     public Monster(String n, String d, int a, int b, char c, int w, String s1, String s2, String s3, String image, String[] say, int[] damages) {
         super(n, d, a, b, c, w);
         String[] s = {s1,s2,s3};
@@ -76,6 +78,14 @@ public class Monster extends Entity {
             }
         }
     }
+    public boolean hasBattled(){
+        return battled;
+    }
+
+    public boolean hasLost() {
+        return lost;
+    }
+
     public void fightPokeymon(Player p){
         int d = -1;
         int num;
@@ -121,7 +131,7 @@ public class Monster extends Entity {
                             "===================================");
                     System.out.print("What would you like to do?(attack, run, catch): ");
                     String inp = scan.next();
-                    for(int i = 0; i < 20; i++){
+                    for(int i = 0; i < 30; i++){
                         System.out.println();
                     }
                     if (inp.toLowerCase().equals("attack") || inp.toLowerCase().equals("a")) {
@@ -167,7 +177,8 @@ public class Monster extends Entity {
                         else{
                             e++;
                         }
-                    } else if (p.getPokeymon(c).getHealth() < 0) {
+                    }
+                    if (p.getPokeymon(c).getHealth() < 0) {
                         System.out.println("Your pokeymon fainted!");
                         if (c >= 2 || c == p.getNumPokeymon() - 1) {
                             end = true;
@@ -194,6 +205,10 @@ public class Monster extends Entity {
                     p.getPokeymon(i).addXP(1);
                 }
             }
+            else{
+                lost = true;
+            }
+            battled = true;
             }
         }
     }

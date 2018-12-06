@@ -46,4 +46,11 @@ public abstract class Entity extends NamedThing{
     public boolean isAlive(){
         return true;
     }
+    public boolean hasBattled(){
+        return false;
+    }
+
+    public boolean hasLost() {
+        return false;
+    }
 }

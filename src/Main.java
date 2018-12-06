@@ -30,7 +30,10 @@ public class Main {
                 "I heard that your pokeymon are running out of health.",
                 "healPokeymon",
                 "There you go, I just healed them for you. They should be better now.",
-                "Come back in to see me whenever your pokeymon faint."
+                "Come back in to see me whenever your pokeymon faint.",
+                "If you're looking for more pokeymon, you should go in the long grass. It looks like this: #",
+                "After you have pokeymon that are high enough level, you can go challenge the gym leaders!",
+                "And then the Grand Champion!"
         };
         String[] guardsWords = {
                 "Well, you beat me fair and square.",
@@ -49,7 +52,7 @@ public class Main {
                 "You might wanna try gym 1 or 2 first."
         };
         String[] dextersWords = {
-                "You wanna buy some drugs?",
+                "You wanna buy some stuff?",
                 "Nah, you don't look like that's what you're here for.",
                 "Do you wanna make a delivery for me?",
                 "Let's battle to see if you're good enough to do it."
@@ -68,8 +71,22 @@ public class Main {
                 "Here's the cranky old man badge.",
                 "Now, GET OFF MY LAWN!"
         };
+        String[] dextersWords2 = {
+                "I guess you're good enough for the job.",
+                "Go into the store that we're next to and give this package to the owner.",
+                "His name is Banana Guy Mike."
+        };
+        String[] policesWords = {
+                "Ha! I caught you.",
+                "You're working with Dexter aren't you!",
+                "I'm gonna have to confiscate that package, but if you beat me in a battle I'll let you go."
+        };
+        String[] policesWords2 = {
+                "Wow, you're good!",
+                "Well, I guess you're free to go."
+        };
         String[] gym2Words = {
-                "You beat me, dude",
+                "You beat me, dude!",
                 "Here's the shirtless surfer guy badge.",
                 "I'm gonna go catch some gnarly waves."
         };
@@ -79,7 +96,7 @@ public class Main {
                 "Well, you did beat me.",
                 "Here's the annoying princess badge,",
                 "Wait did they call me annoying?",
-                "I'm going back to the castle."
+                "I'm going back to my castle."
         };
         //new Monster("Your Mom","The strongest enemy you will ever face",5,5,'&',0,"A","B","C"),
         Sign[] signs = {
@@ -216,7 +233,9 @@ public class Main {
                                         "          |\\             /|\n" +
                                         "          |  \\_________/  |\n" +
                                         "              \\___\\__\n" ,kid1sWords,false),
-                new NPC("Dexter the drug dealer","He's a drug dealer.",2,9,'D',0,
+                new NPC("Dexter the stuffd" +
+                        "d" +
+                        " dealer","He's a drug dealer.",2,9,'D',0,
                         "                      ____...                                  \n" +
                                 "             .-\"--\"\"\"\".__    `.                                \n" +
                                 "            |            `    |                                \n" +
@@ -237,7 +256,7 @@ public class Main {
                                 "   |   |  .d88888P88888888888888888888888b8888888.             \n" +
                                 "   b.--d .d88888P8888888888888888a:f888888|888888b             \n" +
                                 "   88888b 888888|8888888888888888888888888\\8888888\n"  ,dextersWords,false),
-                new Monster("Dexter the drug dealer","He's a drug dealer.",2,9,'D',0,"?","?","?",
+                new Monster("Dexter the stuff dealer","He's a drug dealer.",2,9,'D',0,"?","?","?",
                         "                      ____...                                  \n" +
                                 "             .-\"--\"\"\"\".__    `.                                \n" +
                                 "            |            `    |                                \n" +
@@ -257,7 +276,7 @@ public class Main {
                                 "  \\  \\ |   .888888888888888888888888888888888888b              \n" +
                                 "   |   |  .d88888P88888888888888888888888b8888888.             \n" +
                                 "   b.--d .d88888P8888888888888888a:f888888|888888b             \n" +
-                                "   88888b 888888|8888888888888888888888888\\8888888\n"  ,kid1sWords,dextersPokeymon),
+                                "   88888b 888888|8888888888888888888888888\\8888888\n"  ,dextersWords2,dextersPokeymon),
                 new NPC("Kid","He's annoying.",4,17,'K',0,
                         "    XXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
                                 "  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
@@ -667,8 +686,12 @@ public class Main {
 
                 },
         };
+        int destructionCounter = 0;
         while (true) {
-            int rand  = (int)(Math.random()*200);
+            if(people[people.length - 1].getRoom() != 999 && !people[people.length - 1].hasBattled() && destructionCounter == 0){
+                destructionCounter = 1;
+            }
+            int rand  = (int)(Math.random()*1000);
             if(rand == 100){
                 people[people.length - 1] =  new Monster("Mr. Crockett the god has appeared and","He is the pokeymon god.", bob.getX(), bob.getY(), 'C',bob.getRoom(),"*","*","*",
                         "                                                     ?IODNNNNNNNNDO?\n" +
@@ -754,6 +777,10 @@ public class Main {
                     int a = -1;
                     for(int x = 0; x < people.length; x++){
                         {
+                            if(i*20 + i2 < destructionCounter){
+                                double rando = Math.random()*2;
+                                map += (int)(rando);
+                            }
                             if (people[x].getX() == i2 && people[x].getY() == i && people[x].getRoom() == bob.getRoom()) {
                                 a = x;
                             }
@@ -815,6 +842,9 @@ public class Main {
                 for(int i = 0; i < 50; i++){
                     System.out.println();
                 }
+            }
+            if(destructionCounter > 0){
+                destructionCounter++;
             }
         }
     }
