@@ -23,6 +23,10 @@ public class Door extends Place{
             System.out.println(getDescription());
             return 2;
         }
+        if(map == 0 && p.getX() == 5 && p.getY() == 9){
+            System.out.println(getDescription());
+            return 6;
+        }
         if(map > 0){
             System.out.println(getDescription());
             return 0;

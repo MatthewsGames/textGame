@@ -13,14 +13,15 @@ public class Pokeymon extends Entity {
         maxHealth = (level - 1) * 5 + 20 + xp;
     }
     public int getDamage() {
-        return damage*level;
+        return damage;
     }
     public void checkUpgrade(){
         if(xp >= level + 1){
             xp -= level + 1;
             level++;
+            maxHealth = 20 + (level - 1) * 5 + xp;
             health = maxHealth;
-            damage *= 1.1;
+            damage *= 1.2;
             System.out.println("Your pokeymon leveled up!");
         }
         maxHealth = 20 + (level - 1) * 5 + xp;

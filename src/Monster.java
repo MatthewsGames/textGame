@@ -187,9 +187,8 @@ public class Monster extends Entity {
                             while(!repeat) {
                                 repeat = false;
                                 if(c != p.getNumPokeymon() - 1) {
-                                    if (p.getPokeymon(c + 1).getHealth() >= 0) {
+                                    if (p.getPokeymon(c + 1).getHealth() > 0) {
                                         c++;
-                                    } else {
                                         repeat = true;
                                     }
                                 }

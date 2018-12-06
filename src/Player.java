@@ -100,7 +100,6 @@ public class Player extends Entity{
         int[] p = new int[3];
         for(int i = 0; i < 3; i++) {
             int b = -1;
-            System.out.println(getNumPokeymon());
             while(!(b >= 0 && b < getNumPokeymon())) {
                 System.out.print("What pokeymon would you like as battle pokeymon #" + (i + 1) + "?(1,2,3,etc.): ");
                 b = scan.nextInt() - 1;
@@ -116,6 +115,8 @@ public class Player extends Entity{
         for(int i = 0; i < 3; i++){
             System.out.println(pokeymon.get(i));
         }
+        System.out.println("Press enter to continue...");
+        scan.nextLine();
     }
     public int getNumPokeyballs() {
         return numPokeyballs;
