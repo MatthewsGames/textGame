@@ -531,7 +531,7 @@ public class Main {
                                 "               |.' \\    \\\n" +
                                 "              _\\    \\.-' \\ \n" +
                                 "             (___.-(__.'\\/\n", gym1Words, gym1Pokeymon),
-                new Monster("The weird shirtless guy who is a gym leader","He is shirtless", 1, 18, 'O',4,"C","U","P",
+                new Monster("The weird shirtless guy who is a gym leader","He is shirtless", 1, 18, 'S',4,"C","U","P",
                         "     ////\\\\\\\\\n" +
                                 "      |      |\n" +
                                 "     @  O  O  @\n" +
@@ -758,7 +758,6 @@ public class Main {
 
                 },
                 {
-                        "                       ",
                         "                       ",
                         "                       ",
                         "                       ",
