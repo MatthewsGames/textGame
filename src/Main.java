@@ -27,6 +27,7 @@ public class Main {
         int[] gym2Pokeymon = {15,15,15};
         int[] gym3Pokeymon = {20,20,20};
         int[] policePokeymon = {10,10,10};
+        int[] randomPokeymon = {15,30,30};
         String[] healersWords = {
                 "I heard that your pokeymon are running out of health.",
                 "healPokeymon",
@@ -98,6 +99,45 @@ public class Main {
                 "Here's the annoying princess badge,",
                 "Wait did they call me annoying?",
                 "I'm going back to my castle."
+        };
+        String[] guysWords = {
+                "Thanks for getting rid of that pesky policeman!",
+                "He's always trying to stop my deliveries.",
+                "Here's 10 free pokeyballs for your help!",
+                "giveBalls"
+        };
+        String[] randomsWords = {
+                "Hey puny kid!",
+                "Did the guard let you in? Or did you climb the wall",
+                "Your so bad you probably couldn't even win a battle against my grandma.",
+                "Lets battle, if you beat me I'll give you all my pokeyballs."
+        };
+        String[] randomsWords2 = {
+                "Wow, I must be really bad if you beat me,",
+                "Here, I'll get the pokeyballs from my bag",
+                "Come back in a second and I should have them."
+        };
+        String[] randomsWords3 = {
+                "Here you go. I found them.",
+                "giveBalls",
+                "I hope my grandma beats you."
+        };
+        String[] assistantWords = {
+                "I'm the assistant secretary to the Grand Champion.",
+                "I'm also Randall's Grandma.",
+                "He's such a sweet little boy, you should meet him if you haven't yet.",
+                "Now let's battle!"
+        };
+        String[] assistantWords2 = {
+                "You beat me, now you get to fight my boss."
+        };
+        String[] secretaryWords = {
+                "I'm the secretary to the Grand Champion.",
+                "If you beat me you can face the Grand Champion himself!",
+                "Now let's battle!"
+        };
+        String[] secretaryWords2 = {
+                "I hope you lose against the grand champion, he's the best in the whole wide world."
         };
         //new Monster("Your Mom","The strongest enemy you will ever face",5,5,'&',0,"A","B","C"),
         Sign[] signs = {
@@ -449,7 +489,7 @@ public class Main {
                                 "o888888888888888888888b._            ______...ooo88888888888888P'  .8888888888\n" +
                                 "8888888888888888888888888b. .ooo8b++++++\"\"\"888888888888888888+'  .d88888888888\n" +
                                 "888888888888888888888888888              .d888888888888888+'   .d8888888888888\n" +
-                                "888888888888888888888888888l            .888888888888888+'   .d888888888888888\n" ,policesWords,false),
+                                "888888888888888888888888888l            .888888888888888+'   .d888888888888888\n" ,guysWords,false),
                 new NPC("Police Guy","He's a policeman",3,9,'B',6,
                         "       .-\"\"-.\n" +
                                 "      /-.{}  \\\n" +
@@ -475,7 +515,7 @@ public class Main {
                                 "     `|\"|`\"|\"|\"`\n" +
                                 "     /  )  /  )  \n" +
                                 "    /__/  /__/\n"  ,policesWords,false),
-                new Monster("Police Guy","He's a policeman", 3, 9, 'B',6,"!","?","$",
+                new Monster("Random Guy","He's random", 3, 9, 'B',6,"!","?","$",
                         "       .-\"\"-.\n" +
                                 "      /-.{}  \\\n" +
                                 "      | _\\__.|\n" +
@@ -500,6 +540,160 @@ public class Main {
                                 "     `|\"|`\"|\"|\"`\n" +
                                 "     /  )  /  )  \n" +
                                 "    /__/  /__/\n" , policesWords2, policePokeymon),
+                new NPC("Assistant Secretary to the Grand Champion who is Randall's Grandma","She's a grandma",19,3,'A',7,
+                        "       ___\n" +
+                                "      (___)\n" +
+                                "     /`   `\\\n" +
+                                "    /  /\"\\  \\\n" +
+                                "    \\_/o o\\_/\n" +
+                                "     (  _  )\n" +
+                                "      `\\ /`\n" +
+                                "     /\\\\V//\\\n" +
+                                "    / /_ _\\ \\\n" +
+                                "    \\ \\___/ /\n" +
+                                "     \\/===\\/\n" +
+                                "     ||   ||\n" +
+                                "     ||   ||\n" +
+                                "     ||___||\n" +
+                                "     |_____|\n" +
+                                "       |||\n" +
+                                "      / Y \\\n" +
+                                "      `\"`\"`"  ,assistantWords,false),
+                new Monster("Assistant Secretary to the Grand Champion who is Randall's Grandma","She's a grandma",19,3,'A',7,"Z","Z","Z",
+                        "       ___\n" +
+                                "      (___)\n" +
+                                "     /`   `\\\n" +
+                                "    /  /\"\\  \\\n" +
+                                "    \\_/o o\\_/\n" +
+                                "     (  _  )\n" +
+                                "      `\\ /`\n" +
+                                "     /\\\\V//\\\n" +
+                                "    / /_ _\\ \\\n" +
+                                "    \\ \\___/ /\n" +
+                                "     \\/===\\/\n" +
+                                "     ||   ||\n" +
+                                "     ||   ||\n" +
+                                "     ||___||\n" +
+                                "     |_____|\n" +
+                                "       |||\n" +
+                                "      / Y \\\n" +
+                                "      `\"`\"`" , assistantWords2, policePokeymon),
+                new NPC("Secretary to the Grand Champion","She's a secretary",20,2,'S',7,
+                        "                   //////\n" +
+                                "             <====//////====[]\n" +
+                                "                 /////\\\\\\\\\\\n" +
+                                "               ((((( ))))))))\n" +
+                                "               ||| /\\   /\\ ||\n" +
+                                "               || |_O| |O_|||\n" +
+                                "              (9|     ^    |6)\n" +
+                                "                 \\    V   /                          )\n" +
+                                "                 (~~~~~~~~~)                   ( ((\n" +
+                                "                /~~~~~~~~~~~\\                     )) )\n" +
+                                "              ///////|||\\\\\\\\\\\\\\                 (( ((\n" +
+                                "            //                 \\\\                )  ))\n" +
+                                "      ______|~~~|____________|~~~|_________      (((\n" +
+                                "    []#=====`^^^'============`^^^'========#[]    |||\n" +
+                                "  __[]_____________________________________[]___(___)_\n" +
+                                " [____________________________________________________]\n" +
+                                "   )   ===========================================  (\n" +
+                                "  /  /'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`\\  \\\n" +
+                                "<__/    (___________________________)               \\__> "  ,secretaryWords,false),
+                new Monster("Secretary to the Grand Champion","She's a secretary",20,2,'S',7,"Z","Z","Z",
+                        "                   //////\n" +
+                                "             <====//////====[]\n" +
+                                "                 /////\\\\\\\\\\\n" +
+                                "               ((((( ))))))))\n" +
+                                "               ||| /\\   /\\ ||\n" +
+                                "               || |_O| |O_|||\n" +
+                                "              (9|     ^    |6)\n" +
+                                "                 \\    V   /                          )\n" +
+                                "                 (~~~~~~~~~)                   ( ((\n" +
+                                "                /~~~~~~~~~~~\\                     )) )\n" +
+                                "              ///////|||\\\\\\\\\\\\\\                 (( ((\n" +
+                                "            //                 \\\\                )  ))\n" +
+                                "      ______|~~~|____________|~~~|_________      (((\n" +
+                                "    []#=====`^^^'============`^^^'========#[]    |||\n" +
+                                "  __[]_____________________________________[]___(___)_\n" +
+                                " [____________________________________________________]\n" +
+                                "   )   ===========================================  (\n" +
+                                "  /  /'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`\\  \\\n" +
+                                "<__/    (___________________________)               \\__> " , secretaryWords2, policePokeymon),
+                    new NPC("The Grand Champion Matthew Sheppard","He's awesome",21,1,'M',7,
+                        "             _.-\"\"\"\"-._\n" +
+                                "            / .--....-.\\\n" +
+                                "           / /         \\\\\n" +
+                                "           ||          ||\n" +
+                                "           || .--.  .--||\n" +
+                                "           /`   @  \\ @ |/\n" +
+                                "           \\_      _)  |\n" +
+                                "            |   ,____, ;\n" +
+                                "            | \\  `--' /\n" +
+                                "         _./\\  '.___.;_\n" +
+                                "     _.-'  | `\\      |\\'-.\n" +
+                                "   .'       `\\ '.   / /   '.\n" +
+                                "  /           |/ `\\/`\\|     \\"  ,secretaryWords,false),
+                new Monster("The Grand Champion Matthew Sheppard","He's awesome",21,1,'M',7,"-","+","=",
+                        "             _.-\"\"\"\"-._\n" +
+                                "            / .--....-.\\\n" +
+                                "           / /         \\\\\n" +
+                                "           ||          ||\n" +
+                                "           || .--.  .--||\n" +
+                                "           /`   @  \\ @ |/\n" +
+                                "           \\_      _)  |\n" +
+                                "            |   ,____, ;\n" +
+                                "            | \\  `--' /\n" +
+                                "         _./\\  '.___.;_\n" +
+                                "     _.-'  | `\\      |\\'-.\n" +
+                                "   .'       `\\ '.   / /   '.\n" +
+                                "  /           |/ `\\/`\\|     \\" , secretaryWords2, policePokeymon),
+                new NPC("Randall the Random Guy","He's random",14,2,'R',0,
+                        "      ////^\\\\\\\\\n" +
+                                "      | ^   ^ |\n" +
+                                "     @ (o) (o) @\n" +
+                                "      |   <   |\n" +
+                                "      |  ___  |\n" +
+                                "       \\_____/\n" +
+                                "     ____|  |____\n" +
+                                "    /    \\__/    \\\n" +
+                                "   /              \\\n" +
+                                "  /\\_/|        |\\_/\\\n" +
+                                " / /  |        |  \\ \\\n" +
+                                "( <   |        |   > )\n" +
+                                " \\ \\  |        |  / /\n" +
+                                "  \\ \\ |________| / /\n" +
+                                "   \\ \\|"  ,randomsWords,false),
+                new Monster("Randall Random Guy","He's random", 14, 2, 'R',0,"X","Y","Z",
+                        "      ////^\\\\\\\\\n" +
+                                "      | ^   ^ |\n" +
+                                "     @ (o) (o) @\n" +
+                                "      |   <   |\n" +
+                                "      |  ___  |\n" +
+                                "       \\_____/\n" +
+                                "     ____|  |____\n" +
+                                "    /    \\__/    \\\n" +
+                                "   /              \\\n" +
+                                "  /\\_/|        |\\_/\\\n" +
+                                " / /  |        |  \\ \\\n" +
+                                "( <   |        |   > )\n" +
+                                " \\ \\  |        |  / /\n" +
+                                "  \\ \\ |________| / /\n" +
+                                "   \\ \\|" , randomsWords2, randomPokeymon),
+                new NPC("Randall the Random Guy","He's random",14,2,'R',1,
+                        "      ////^\\\\\\\\\n" +
+                                "      | ^   ^ |\n" +
+                                "     @ (o) (o) @\n" +
+                                "      |   <   |\n" +
+                                "      |  ___  |\n" +
+                                "       \\_____/\n" +
+                                "     ____|  |____\n" +
+                                "    /    \\__/    \\\n" +
+                                "   /              \\\n" +
+                                "  /\\_/|        |\\_/\\\n" +
+                                " / /  |        |  \\ \\\n" +
+                                "( <   |        |   > )\n" +
+                                " \\ \\  |        |  / /\n" +
+                                "  \\ \\ |________| / /\n" +
+                                "   \\ \\|"  ,randomsWords3,false),
                 new Monster("The old man who is a gym leader","He is old", 21, 18, 'O',5,"D","O","G",
                         "               ,\n" +
                                 "            ,:' `..;\n" +
@@ -806,6 +1000,28 @@ public class Main {
                         "               ",
 
 
+                },
+                {
+                        "              HHHHHHHHH",
+                        "               H X X  H",
+                        "                | X   H",
+                        "                 H   XH",
+                        "                  H X H",
+                        "                   - XH",
+                        "                    H H",
+                        "                     HH",
+                        "                      H",
+                        "                       ",
+                        "                       ",
+                        "                       ",
+                        "                       ",
+                        "                       ",
+                        "                       ",
+                        "                       ",
+                        "                       ",
+                        "                       ",
+                        "                       ",
+                        "                       "
                 },
         };
         int destructionCounter = 0;

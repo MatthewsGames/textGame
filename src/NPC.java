@@ -23,6 +23,9 @@ public class NPC extends Entity {
             else if(x.equals("givePokeymon")){
                 givePokeymon(p);
             }
+            else if(x.equals("giveBalls")){
+                giveBalls(p);
+            }
             else if(x.equals("healPokeymon")){
                 healPokeymon(p);
             }
@@ -48,6 +51,9 @@ public class NPC extends Entity {
             p.getPokeymon(i).checkUpgrade();
             p.getPokeymon(i).setHealth(p.getPokeymon(i).getMaxHealth());
         }
+    }
+    public void giveBalls(Player p){
+        p.addPokeyballs(10);
     }
     public void givePokeymon(Player p){
         System.out.println("Here are your choices for your first pokeymon. You can choose A, B, or C.");
