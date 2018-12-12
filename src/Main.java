@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        Player bob = new Player("Bob","A guy named Bob",3,12,'@',0,1,10,10);
+        Player bob = new Player("Bob", "A guy named Bob", 3, 12, '@', 0, 1, 10, 10);
         String[] professorsWords = {"Oh, hello there. I seem to have forgotten your name.",
                 "inputName",
                 "Nice to meet you.",
@@ -19,15 +19,20 @@ public class Main {
                 "Wow, Good battle son. You're a natural!",
                 "You should go find the pokeycenter. They'll heal your pokeymon there."
         };
-        int[] momsPokeymon = {1,2,3};
-        int[] guardsPokeymon = {25,25,25};
-        int[] dextersPokeymon = {10,10,10};
-        int[] crockettsPokeymon = {100,100,100};
-        int[] gym1Pokeymon = {10,10,10};
-        int[] gym2Pokeymon = {15,15,15};
-        int[] gym3Pokeymon = {20,20,20};
-        int[] policePokeymon = {10,10,10};
-        int[] randomPokeymon = {15,30,30};
+        int[] momsPokeymon = {1, 2, 3, 1};
+        int[] guardsPokeymon = {25, 25, 25, 4};
+        int[] dextersPokeymon = {10, 10, 10, 1};
+        int[] crockettsPokeymon = {100, 100, 100, 9};
+        int[] gym1Pokeymon = {10, 10, 10, 1};
+        int[] gym2Pokeymon = {15, 15, 15, 2};
+        int[] gym3Pokeymon = {20, 20, 20, 3};
+        int[] policePokeymon = {10, 10, 10, 1};
+        int[] randomPokeymon = {15, 30, 30, 3};
+        int[] assistantPokeymon = {45, 30, 32, 5};
+        int[] secretaryPokeymon = {50, 45, 37, 6};
+        int[] charmersPokeymon = {35, 35, 36, 5};
+        int[] matthewsPokeymon = {101, 99, 102, 10};
+        int[] flyingsPokeymon = {30,35,40,4};
         String[] healersWords = {
                 "I heard that your pokeymon are running out of health.",
                 "healPokeymon",
@@ -106,6 +111,15 @@ public class Main {
                 "Here's 10 free pokeyballs for your help!",
                 "giveBalls"
         };
+        String[] charmersWords = {
+                "Do you like my snakes?",
+                "They're very slithery.",
+                "Let's fight!"
+        };
+        String[] charmersWords2 = {
+                "You must have cheated! My snakes are too good for you.",
+                "Leave now! You are disturbing me and my snakes."
+        };
         String[] randomsWords = {
                 "Hey puny kid!",
                 "Did the guard let you in? Or did you climb the wall",
@@ -139,6 +153,130 @@ public class Main {
         String[] secretaryWords2 = {
                 "I hope you lose against the grand champion, he's the best in the whole wide world."
         };
+        String[] matthewsWords = {
+                "I am the Grand Champion, Matthew Sheppard.",
+                "Good luck beating me, my pokeymon are the best!",
+                "If you do beat me, you have become the grand champion and are the best pokeymon trainer in the world!",
+                "That'll never happen though.",
+                "Let's fight!"
+        };
+        String[] matthewsWords2 = {
+                "Well, I guess you're the new grand champion.",
+                "I'll just take my stuff and leave.",
+                "You can have my secretary.",
+                "And that weird old grandma that is always in here for some reason.",
+                "Also, YOU WON THE GAME!"
+        };
+        String[] flyingsWords = {
+        "I used to think that I could not go on",
+        "And life was nothing but an awful song",
+        "But now I know the meaning of true love",
+        "I'm leaning on the everlasting arms",
+                "If I can see it, then I can do it" ,
+                "If I just believe it, there 's nothing to it",
+                "believe I can fly" ,
+                "I believe I can touch the sky",
+        "I think about it every night and day (Night and day)",
+        "Spread my wings and fly away",
+        "I believe I can soar",
+        "I see me running through that open door",
+        "I believe I can fly",
+        "I believe I can fly",
+        "I believe I can fly hoo",
+        "See I was on the verge of breaking down",
+        "Sometimes silence can seem so loud",
+        "There are miracles in life I must achieve",
+        "But first I know it starts inside of me, ho oh",
+        "If I can see it hoo, then I can be it",
+        "If I just believe it, there 's nothing to it",
+                "I believe I can fly" ,
+                "I believe I can touch the sky",
+        "I think about it every night and day",
+        "Spread my wings and fly away",
+        "I believe I can soar",
+        "I see me running through that open door",
+        "I believe I can fly",
+        "I believe I can fly",
+        "Oh, I believe I can fly hoo",
+        "Hey, 'cause I believe in me, oh",
+                "If I can see it hoo, then I can do it" ,
+                "If I just believe it, there 's nothing to it hey",
+                "I believe I can fly hoo" ,
+                "I believe I can touch the sky",
+        "I think about it every night and day",
+        "Spread my wings and fly away",
+        "I believe I can soar",
+        "I see me running through that open door",
+        "I believe I can fly(I can fly)",
+        "I believe I can fly(I can fly)",
+        "I believe I can fly(I can fly) hey",
+        "If I just spread my wings (I can fly)",
+        "I can fly(I can fly)",
+        "I can fly(I can fly)",
+        "I can fly, (I can fly)hey",
+        "If I just spread my wings (I can fly)",
+        "I can fly(I can fly)",
+        "(I can fly)",
+        "(I can fly)",
+                "Do you wanna fly(I mean fight) my pokeymon?"
+        };
+        String[] flyingsWords2 = {
+                "Wow, good job.",
+                "If you believe, you can fly."
+        };
+        String[] flyingsWords3 = {
+                "I used to think that I could not go on",
+                "And life was nothing but an awful song",
+                "But now I know the meaning of true love",
+                "I'm leaning on the everlasting arms",
+                "If I can see it, then I can do it" ,
+                "If I just believe it, there 's nothing to it",
+                "believe I can fly" ,
+                "I believe I can touch the sky",
+                "I think about it every night and day (Night and day)",
+                "Spread my wings and fly away",
+                "I believe I can soar",
+                "I see me running through that open door",
+                "I believe I can fly",
+                "I believe I can fly",
+                "I believe I can fly hoo",
+                "See I was on the verge of breaking down",
+                "Sometimes silence can seem so loud",
+                "There are miracles in life I must achieve",
+                "But first I know it starts inside of me, ho oh",
+                "If I can see it hoo, then I can be it",
+                "If I just believe it, there 's nothing to it",
+                "I believe I can fly" ,
+                "I believe I can touch the sky",
+                "I think about it every night and day",
+                "Spread my wings and fly away",
+                "I believe I can soar",
+                "I see me running through that open door",
+                "I believe I can fly",
+                "I believe I can fly",
+                "Oh, I believe I can fly hoo",
+                "Hey, 'cause I believe in me, oh",
+                "If I can see it hoo, then I can do it" ,
+                "If I just believe it, there 's nothing to it hey",
+                "I believe I can fly hoo" ,
+                "I believe I can touch the sky",
+                "I think about it every night and day",
+                "Spread my wings and fly away",
+                "I believe I can soar",
+                "I see me running through that open door",
+                "I believe I can fly(I can fly)",
+                "I believe I can fly(I can fly)",
+                "I believe I can fly(I can fly) hey",
+                "If I just spread my wings (I can fly)",
+                "I can fly(I can fly)",
+                "I can fly(I can fly)",
+                "I can fly, (I can fly)hey",
+                "If I just spread my wings (I can fly)",
+                "I can fly(I can fly)",
+                "(I can fly)",
+                "(I can fly)",
+        };
+
         //new Monster("Your Mom","The strongest enemy you will ever face",5,5,'&',0,"A","B","C"),
         Sign[] signs = {
             new Sign("Your House Sign","A sign", 7,13, '?',"This is your house."),
@@ -577,7 +715,7 @@ public class Main {
                                 "     |_____|\n" +
                                 "       |||\n" +
                                 "      / Y \\\n" +
-                                "      `\"`\"`" , assistantWords2, policePokeymon),
+                                "      `\"`\"`" , assistantWords2, assistantPokeymon),
                 new NPC("Secretary to the Grand Champion","She's a secretary",20,2,'S',7,
                         "                   //////\n" +
                                 "             <====//////====[]\n" +
@@ -617,7 +755,7 @@ public class Main {
                                 " [____________________________________________________]\n" +
                                 "   )   ===========================================  (\n" +
                                 "  /  /'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`\\  \\\n" +
-                                "<__/    (___________________________)               \\__> " , secretaryWords2, policePokeymon),
+                                "<__/    (___________________________)               \\__> " , secretaryWords2, secretaryPokeymon),
                     new NPC("The Grand Champion Matthew Sheppard","He's awesome",21,1,'M',7,
                         "             _.-\"\"\"\"-._\n" +
                                 "            / .--....-.\\\n" +
@@ -631,7 +769,7 @@ public class Main {
                                 "         _./\\  '.___.;_\n" +
                                 "     _.-'  | `\\      |\\'-.\n" +
                                 "   .'       `\\ '.   / /   '.\n" +
-                                "  /           |/ `\\/`\\|     \\"  ,secretaryWords,false),
+                                "  /           |/ `\\/`\\|     \\"  ,matthewsWords,false),
                 new Monster("The Grand Champion Matthew Sheppard","He's awesome",21,1,'M',7,"-","+","=",
                         "             _.-\"\"\"\"-._\n" +
                                 "            / .--....-.\\\n" +
@@ -645,7 +783,117 @@ public class Main {
                                 "         _./\\  '.___.;_\n" +
                                 "     _.-'  | `\\      |\\'-.\n" +
                                 "   .'       `\\ '.   / /   '.\n" +
-                                "  /           |/ `\\/`\\|     \\" , secretaryWords2, policePokeymon),
+                                "  /           |/ `\\/`\\|     \\" , matthewsWords2, matthewsPokeymon),
+                new NPC("Flying Guy","He's flying",20,8,'F',0,
+                        "                       ,,,\n" +
+                                "                       i i'\n" +
+                                "                       \\~;\\\n" +
+                                "                        \\; \\\n" +
+                                "                         \\ ;\\    ====\n" +
+                                "                          \\ ;\\  ==== \\\n" +
+                                "                     __,--';;;\\-' (  0\n" +
+                                "               __,--';;; ;;; ;;\\      >\n" +
+                                "        __,--'\\\\ ;;; ;;; ;;; ;;;\\--__<\n" +
+                                " _ _,--' __,--'\\\\  ;;; __,~~' \\ ;\\\n" +
+                                "(_)|_,--' __,--'\\\\;,~~'        \\ ;\\\n" +
+                                "|(_)|_,--'       ~~             \\; \\\n" +
+                                "|| |                             \\ ;\\\n" +
+                                " |_/                              !~!,\n" +
+                                "                              .---'''---.\n" +
+                                "                              |         |\n" +
+                                "                              |         |\n" +
+                                "                              |         |\n" +
+                                "                              `---------'"  ,flyingsWords,false),
+                new Monster("Flying Guy","He's flying",20,8,'F',0,"F","L","Y",
+                        "                       ,,,\n" +
+                                "                       i i'\n" +
+                                "                       \\~;\\\n" +
+                                "                        \\; \\\n" +
+                                "                         \\ ;\\    ====\n" +
+                                "                          \\ ;\\  ==== \\\n" +
+                                "                     __,--';;;\\-' (  0\n" +
+                                "               __,--';;; ;;; ;;\\      >\n" +
+                                "        __,--'\\\\ ;;; ;;; ;;; ;;;\\--__<\n" +
+                                " _ _,--' __,--'\\\\  ;;; __,~~' \\ ;\\\n" +
+                                "(_)|_,--' __,--'\\\\;,~~'        \\ ;\\\n" +
+                                "|(_)|_,--'       ~~             \\; \\\n" +
+                                "|| |                             \\ ;\\\n" +
+                                " |_/                              !~!,\n" +
+                                "                              .---'''---.\n" +
+                                "                              |         |\n" +
+                                "                              |         |\n" +
+                                "                              |         |\n" +
+                                "                              `---------'" , flyingsWords2, flyingsPokeymon),
+                new NPC("Flying Guy","He's flying",20,8,'F',0,
+                        "                       ,,,\n" +
+                                "                       i i'\n" +
+                                "                       \\~;\\\n" +
+                                "                        \\; \\\n" +
+                                "                         \\ ;\\    ====\n" +
+                                "                          \\ ;\\  ==== \\\n" +
+                                "                     __,--';;;\\-' (  0\n" +
+                                "               __,--';;; ;;; ;;\\      >\n" +
+                                "        __,--'\\\\ ;;; ;;; ;;; ;;;\\--__<\n" +
+                                " _ _,--' __,--'\\\\  ;;; __,~~' \\ ;\\\n" +
+                                "(_)|_,--' __,--'\\\\;,~~'        \\ ;\\\n" +
+                                "|(_)|_,--'       ~~             \\; \\\n" +
+                                "|| |                             \\ ;\\\n" +
+                                " |_/                              !~!,\n" +
+                                "                              .---'''---.\n" +
+                                "                              |         |\n" +
+                                "                              |         |\n" +
+                                "                              |         |\n" +
+                                "                              `---------'"  ,flyingsWords3,true),
+                new NPC("Snake Charmer Guy","He charms snakes",18,6,'S',0,
+                        "   ,'._,`.\n" +
+                                "  (-.___.-)\n" +
+                                "  (-.___.-)\n" +
+                                "  `-.___.-'\n" +
+                                "   ((  @ @|              .            __\n" +
+                                "    \\\\   ` |         ,\\\\   |`.    @|   |  |      _.-._\n" +
+                                "   __`.`=-=mm===mm:: |   | |`.   |   |  |    ,'=` '=`.\n" +
+                                "  (    `-'|:/  /:/  `/  @| | |   |, @| @|   /---)W(---\\\\\n" +
+                                "   \\\\ \\\\   / /  / /         @| |   '         (----| |----) ,~\n" +
+                                "   |\\\\ \\\\ / /| / /            @|              \\\\---| |---/  |\n" +
+                                "   | \\\\ V /||/ /                              `.-| |-,'   |\n" +
+                                "   |  `-' |V /                                 \\\\| |/    @'\n" +
+                                "   |    , |-'                                 __| |__\n" +
+                                "   |    .;: _,-.                         ,--\"\"..| |..\"\"--.\n" +
+                                "   ;;:::' \"    )                        (`--::__|_|__::--')\n" +
+                                " ,-\"      _,  /                          \\\\`--...___...--'/\n" +
+                                "(    -:--'/  /                           /`--...___...--'\\\\\n" +
+                                " \"-._  `\"'._/                           /`---...___...---'\\\\\n" +
+                                "     \"-._   \"---.                      (`---....___....---')\n" +
+                                "      .' \",._ ,' )                     |`---....___....---'|\n" +
+                                "      /`._|  `|  |                     (`---....___....---')\n" +
+                                "     (   \\\\    |  /                      \\\\`---...___...---'/\n" +
+                                "      `.  `,  ^\"\"                        `:--...___...--;'\n" +
+                                "        `.,'                               `-._______.-'"  ,charmersWords,false),
+                new Monster("Snake Charmer Guy","He charms snakes", 18, 6, 'S',0,"S","S","S",
+                        "   ,'._,`.\n" +
+                                "  (-.___.-)\n" +
+                                "  (-.___.-)\n" +
+                                "  `-.___.-'\n" +
+                                "   ((  @ @|              .            __\n" +
+                                "    \\\\   ` |         ,\\\\   |`.    @|   |  |      _.-._\n" +
+                                "   __`.`=-=mm===mm:: |   | |`.   |   |  |    ,'=` '=`.\n" +
+                                "  (    `-'|:/  /:/  `/  @| | |   |, @| @|   /---)W(---\\\\\n" +
+                                "   \\\\ \\\\   / /  / /         @| |   '         (----| |----) ,~\n" +
+                                "   |\\\\ \\\\ / /| / /            @|              \\\\---| |---/  |\n" +
+                                "   | \\\\ V /||/ /                              `.-| |-,'   |\n" +
+                                "   |  `-' |V /                                 \\\\| |/    @'\n" +
+                                "   |    , |-'                                 __| |__\n" +
+                                "   |    .;: _,-.                         ,--\"\"..| |..\"\"--.\n" +
+                                "   ;;:::' \"    )                        (`--::__|_|__::--')\n" +
+                                " ,-\"      _,  /                          \\\\`--...___...--'/\n" +
+                                "(    -:--'/  /                           /`--...___...--'\\\\\n" +
+                                " \"-._  `\"'._/                           /`---...___...---'\\\\\n" +
+                                "     \"-._   \"---.                      (`---....___....---')\n" +
+                                "      .' \",._ ,' )                     |`---....___....---'|\n" +
+                                "      /`._|  `|  |                     (`---....___....---')\n" +
+                                "     (   \\\\    |  /                      \\\\`---...___...---'/\n" +
+                                "      `.  `,  ^\"\"                        `:--...___...--;'\n" +
+                                "        `.,'                               `-._______.-'" , charmersWords2, charmersPokeymon),
                 new NPC("Randall the Random Guy","He's random",14,2,'R',0,
                         "      ////^\\\\\\\\\n" +
                                 "      | ^   ^ |\n" +
@@ -678,7 +926,7 @@ public class Main {
                                 " \\ \\  |        |  / /\n" +
                                 "  \\ \\ |________| / /\n" +
                                 "   \\ \\|" , randomsWords2, randomPokeymon),
-                new NPC("Randall the Random Guy","He's random",14,2,'R',1,
+                new NPC("Randall the Random Guy","He's random",14,2,'R',0,
                         "      ////^\\\\\\\\\n" +
                                 "      | ^   ^ |\n" +
                                 "     @ (o) (o) @\n" +
@@ -750,7 +998,7 @@ public class Main {
                                 "      |  |  |\n" +
                                 "     _|  |  |\n" +
                                 " cccC_Cccc___)\n" , gym2Words, gym2Pokeymon),
-                new Monster("The annoying princess girl who is a gym leader","She is a princess", 1, 3, 'Q',3,"W","I","N",
+                new Monster("The annoying princess girl who is a gym leader","She is a princess", 1, 3, 'P',3,"W","I","N",
                         "                       _._                                      \n" +
                                 "                     ,\"-._\"-.                                   \n" +
                                 "                     ;\"-._\"-.\"-.                                \n" +

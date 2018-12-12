@@ -14,7 +14,7 @@ public class Monster extends Entity {
         this.image = image;
         this.damages = damages;
         for(int i = 0; i < s.length; i++){
-            symbols[i] = new Pokeymon(s[i],s[i].toLowerCase(),a,b,s[i].charAt(0),1,damages[i]);
+            symbols[i] = new Pokeymon(s[i],s[i].toLowerCase(),a,b,s[i].charAt(0),damages[3],damages[i]);
         }
         alive = true;
     }
