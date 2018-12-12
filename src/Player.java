@@ -56,7 +56,7 @@ public class Player extends Entity{
         inventory.add(i);
     }
     public void input(){
-        System.out.print("What would you like to do?: ");
+        System.out.print("What would you like to do?(type 'h' for help): ");
         String input = scan.nextLine();
         pX = getX();
         pY = getY();
@@ -73,7 +73,30 @@ public class Player extends Entity{
             moveY(1);
         }
         if(input.equals("help") || input.toLowerCase().equals("h")){
-            moveY(1);
+            System.out.println(
+            "Main commands:\n" +
+            "'h' - help\n" +
+            "'a' - left\n" +
+            "'w' - up\n" +
+            "'s' - down\n" +
+            "'d' - right\n" +
+            "'p' - choose which of your pokeymon are your battle pokeymon. Must have at least 4 to change order.\n" +
+            "Battle commands:\n" +
+                    "'a' - attack\n" +
+                    "'c' - catch wild pokeymon\n" +
+                    "'r' - run\n" +
+             "Symbols on the map:\n" +
+                    "'@' - the player\n" +
+                    "'X' - wall\n" +
+                    "'H' - house wall\n" +
+                    "'-' or '|' - door\n" +
+                    "'?' - sign\n" +
+                    "' ' - grass\n" +
+                    "'#' - long grass. If you go in it you have a chance of finding a pokeymon to fight.\n" +
+                    "Anything else - a person you can talk to and/or fight.\n" +
+                    "Press enter to return to game..."
+            );
+            scan.nextLine();
         }
         if(input.equals("pokeymon") || input.toLowerCase().equals("p")){
             if(getNumPokeymon() >= 3) {
