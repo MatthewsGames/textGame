@@ -653,7 +653,7 @@ public class Main {
                                 "     `|\"|`\"|\"|\"`\n" +
                                 "     /  )  /  )  \n" +
                                 "    /__/  /__/\n"  ,policesWords,false),
-                new Monster("Random Guy","He's random", 3, 9, 'B',6,"!","?","$",
+                new Monster("Police Guy","He's a policeman", 3, 9, 'B',6,"!","?","$",
                         "       .-\"\"-.\n" +
                                 "      /-.{}  \\\n" +
                                 "      | _\\__.|\n" +
