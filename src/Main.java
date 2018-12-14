@@ -72,7 +72,8 @@ public class Main {
         };
         String[] crockettsWords = {
                 "You have defeated the Mighty Crockett.",
-                "I will now give you the almighty asterisk as your reward.",
+                "I will now give you one of my Almighty Asterisks as your reward.",
+                "giveAsterisk",
                 "Now you are the true pokeymon champion."
         };
         String[] gym1Words = {

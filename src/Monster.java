@@ -44,6 +44,9 @@ public class Monster extends Entity {
             if(x.equals("givePokeymon")){
                 givePokeymon(p);
             }
+            if(x.equals("giveAsterisk")){
+                giveAsterisk(p);
+            }
             else if(x.equals("healPokeymon")){
                 healPokeymon(p);
             }
@@ -77,6 +80,9 @@ public class Monster extends Entity {
                 a = true;
             }
         }
+    }
+    public void giveAsterisk(Player p){
+        p.addPokeymon(new Pokeymon("*", "The Almighty Asterisk", p.getX(), p.getY(), '*', 9, 100));
     }
     public boolean hasBattled(){
         return battled;
