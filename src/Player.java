@@ -2,9 +2,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 public class Player extends Entity{
     private int level;
-    private int damage;
-    private Weapon currentWeapon;
-    private ArrayList<Item> inventory;
     private Scanner scan = new Scanner(System.in);
     private int pX;
     private int pY;
@@ -13,15 +10,11 @@ public class Player extends Entity{
     public Player(String n, String d, int a, int b, char c, int w,int l, int da, int p) {
         super(n,d,a,b,c,w);
         level = l;
-        damage = da;
         pX = getY();
         pY = getX();
         numPokeyballs = p;
     }
 
-    public int getDamage() {
-        return damage + currentWeapon.getDamage();
-    }
 
     public int getLevel() {
         return level;
@@ -51,9 +44,6 @@ public class Player extends Entity{
     }
     public int getPokeymonHealth(int i){
         return pokeymon.get(i).getHealth();
-    }
-    public void addItem(Item i){
-        inventory.add(i);
     }
     public void input(){
         System.out.print("What would you like to do?(type 'h' for help): ");

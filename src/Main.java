@@ -1,3 +1,4 @@
+import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Player bob = new Player("Bob", "A guy named Bob", 3, 12, '@', 0, 1, 10, 10);
@@ -320,7 +321,7 @@ public class Main {
         "     _____________/%%%%\\/\\'\"'\"/\\/%%%%\\______________\n" +
         "    / :  :  :  /  .\\%%%%%%%\"'/%%%%%%%/.  \\  :  :  : \\\n" +
         "   )  :  :  :  \\.  .\\%%%%%%/'\"\\%%%%%%/.  ./  :  :  :  (",professorsWords,false),
-        new NPC("Mom","mom",5,14,'M',0,
+        new NPC("Mom","mom",5,13,'M',0,
 "                 ,     ,  ._  ,\n" +
 "                _.MMmm.mMm_Mm.MMm_:mMMmmm.._  .\n" +
 "           _ .-mmMMMMMMMMMMMMm:MMm:MMMMMMMMMm._\n" +
@@ -1272,6 +1273,29 @@ public class Main {
                         "                       "
                 },
         };
+        System.out.println();
+        System.out.println("______     _ \n" +
+                "| ___ \\   | |                                   \n" +
+                "| |_/ /__ | | _____ _   _ _ __ ___   ___  _ __  \n" +
+                "|  __/ _ \\| |/ / _ \\ | | | '_ ` _ \\ / _ \\| '_ \\ \n" +
+                "| | | (_) |   <  __/ |_| | | | | | | (_) | | | |\n" +
+                "\\_|  \\___/|_|\\_\\___|\\__, |_| |_| |_|\\___/|_| |_|\n" +
+                "                     __/ |                      \n" +
+                "                    |___/                       ");
+        System.out.println("The Text-Based Adventure Game");
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println(" ________         ______               \n" +
+                "/_  __/ /  ___   / __/ /____  ______ __\n" +
+                " / / / _ \\/ -_) _\\ \\/ __/ _ \\/ __/ // /\n" +
+                "/_/ /_//_/\\__/ /___/\\__/\\___/_/  \\_, / \n" +
+                "                                /___/  ");
+        System.out.println();
+        System.out.println("\tYou live in Keebored City and you desire to prove yourself as a real\npokeymon trainer. One day, you find out that the professor wants to talk to\nyou. You are excited and he decides to give you your first pokeymon so\nthat you can catch more and become the greatest pokeymon trainer ever!\nTo become the grand champion you must battle with and train your\npokeymon. You must battle all 3 gym leaders, the guard at the gate, and\nthe assistant to the secretary to the grand champion, the secretary to the\ngrand champion, and finally, the one, the only, the amazing, the\nawe-inspiring, the Grand Champion Matthew Sheppard! If that isn’t enough\nbattles for you, there are plenty of other people willing to battle you. If you\nare lucky(or maybe unlucky) enough the mighty Crockett will appear and ask to\nfight you. Beware, for if you refuse to battle him, he will begin to hack your\nscreen and fill it with random binary digits. If you defeat him, he will give\nyou a super powerful Almighty Asterisk. This is the only way to get one of\nthese pokeymon, as they cannot be found in the wild. Start your adventure now,\nwith Pokeymon!\n");
+        System.out.println("Press enter to begin game...");
+        Scanner scan = new Scanner(System.in);
+        scan.nextLine();
         int destructionCounter = 0;
         while (true) {
             if(people[people.length - 1].getRoom() != 999 && !people[people.length - 1].hasBattled() && destructionCounter == 0){
