@@ -1,5 +1,4 @@
 import java.util.Scanner;
-// This is the only comment in the entire program... Good Luck
 public class Main {
     public static void main(String[] args) {
         Player bob = new Player("Bob", "A guy named Bob", 3, 12, '@', 0, 1, 10, 10);
